@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.png">
+    <meta name="keywords" content="静水深流, 三伏原声音轨, 三伏, 在线播放, 音乐">
+    <meta name="description" content="三伏原声音轨在线播放">
+    <meta name="author" content="Ethaniel">
+    <title>三伏原声音轨</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background: url('三伏.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 40px);
+            box-sizing: border-box;
+        }
+
+        .player-container {
+            width: 70%;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .playlist-and-info {
+            display: flex;
+            gap: 20px;
+        }
+
+        .playlist {
+            width: 70%;
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .playlist-item {
+            padding: 10px;
+            cursor: pointer;
+            border-bottom: 1px solid #ddd;
+            transition: background 0.3s;
+        }
+
+        .playlist-item:hover {
+            background: #f0f0f0;
+        }
+
+        .playlist-item.active {
+            background: #ececec;
+            font-weight: bold;
+        }
+
+        .song-info {
+            width: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-image: url('1.png'); /* 设置背景图片 */
+        background-size: cover; 
+        background-position: center;
+        background-repeat: no-repeat;
+        }
+
+        .song-info h3, .song-info p {
+            margin: 5px 0;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .progress-bar {
+            width: 100%;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="player-container">
+        <div class="playlist-and-info">
+            <div class="playlist" id="playlistContainer">
+                <!-- 播放列表将在这里动态添加 -->
+            </div>
+            <div class="song-info" id="songInfo">
+                <h3>歌曲名称</h3>
+                <p>艺术家</p>
+            </div>
+        </div>
+        <audio id="audioPlayer" class="progress-bar" controls></audio>
+        <div class="controls">
+        </div>
+    </div>
+
+    <script>
+        // 播放列表：可以替换为动态生成的音乐文件路径
+        const playlist = [
+            { path: 'music/01.墙中佛-Statue Theme.mp3', name: '01.墙中佛-Statue Theme', artist: '无水醋酸铜　' },
+            { path: 'music/02.妙法莲华-Lotus Theme.mp3', name: '02.妙法莲华-Lotus Theme', artist: '无水醋酸铜　' },
+            { path: 'music/03.缘生缘灭-Serendipity.mp3', name: '03.缘生缘灭-Serendipity', artist: '无水醋酸铜　' },
+            { path: 'music/04.众生相-Paramartha-Satya.mp3', name: '04.众生相-Paramartha-Satya', artist: '无水醋酸铜　' },
+            { path: 'music/05.一出好戏-The Show.mp3', name: '05.一出好戏-The Show', artist: '无水醋酸铜　' },
+            { path: 'music/06.莲花局-The Trick.mp3', name: '06.莲花局-The Trick', artist: '无水醋酸铜　' },
+            { path: 'music/07.明镜止水-Inside Out.mp3', name: '07.明镜止水-Inside Out', artist: '无水醋酸铜　' },
+            { path: 'music/08.二桃杀三士-The Slaughter.mp3', name: '08.二桃杀三士-The Slaughter', artist: '无水醋酸铜　' },
+            { path: 'music/09.生死一线-Holding up.mp3', name: '09.生死一线-Holding up', artist: '无水醋酸铜　' },
+            { path: 'music/10.飘零-The Fall.mp3', name: '10.飘零-The Fall', artist: '无水醋酸铜　' },
+            { path: 'music/11.掌心-The Glory.mp3', name: '11.掌心-The Glory', artist: '无水醋酸铜　' },
+            { path: 'music/12.老徐的愉快小调-Ah_ - Lao Xu.mp3', name: '12.老徐的愉快小调-Ah_ - Lao Xu', artist: '无水醋酸铜　' },
+            { path: 'music/13.小邱的闲暇时光-Being Idle - Xiao Qiu.mp3', name: '13.小邱的闲暇时光-Being Idle - Xiao Qiu', artist: '无水醋酸铜　' },
+            { path: 'music/14.快餐店往事-Once Upon a Time in the Diner.mp3', name: '14.快餐店往事-Once Upon a Time in the Diner', artist: '无水醋酸铜　' },
+            { path: 'music/15.过敏原-Icecream.mp3', name: '15.过敏原-Icecream', artist: '无水醋酸铜　' },
+            { path: 'music/16.楼梯间的月光-Moonlight.mp3', name: '16.楼梯间的月光-Moonlight', artist: '无水醋酸铜　' },
+            { path: 'music/17.舒缓小夜曲-Nocturne.mp3', name: '17.舒缓小夜曲-Nocturne', artist: '无水醋酸铜　' },
+            { path: 'music/18.空中摇篮曲-Skyride.mp3', name: '18.空中摇篮曲-Skyride', artist: '无水醋酸铜　' }
+        ];
+
+        const audioPlayer = document.getElementById('audioPlayer');
+        const playlistContainer = document.getElementById('playlistContainer');
+        const songInfo = document.getElementById('songInfo');
+        let currentTrack = 0;
+
+        // 加载播放列表到界面
+        function loadPlaylist() {
+            playlist.forEach((track, index) => {
+                const item = document.createElement('div');
+                item.className = 'playlist-item';
+                item.textContent = track.name;
+                item.dataset.index = index;
+                item.addEventListener('click', () => playTrack(index));
+                playlistContainer.appendChild(item);
+            });
+        }
+
+        // 更新歌曲信息
+        function updateSongInfo() {
+            const track = playlist[currentTrack];
+            songInfo.querySelector('h3').textContent = track.name;
+            songInfo.querySelector('p').textContent = track.artist;
+        }
+
+        // 高亮当前播放的曲目
+        function updateActiveTrack() {
+            document.querySelectorAll('.playlist-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            const currentItem = document.querySelector(`.playlist-item[data-index='${currentTrack}']`);
+            if (currentItem) currentItem.classList.add('active');
+        }
+
+        // 播放指定曲目
+        function playTrack(index) {
+            currentTrack = index;
+            audioPlayer.src = playlist[currentTrack].path;
+            audioPlayer.play();
+            updateActiveTrack();
+            updateSongInfo();
+        }
+
+        // 当前曲目结束后自动播放下一首
+        audioPlayer.addEventListener('ended', () => {
+            if (currentTrack < playlist.length - 1) {
+                playTrack(currentTrack + 1);
+            } else {
+                playTrack(0);  // 如果是最后一首，循环到第一首
+            }
+        });
+
+        // 初始化播放器
+        loadPlaylist();
+        updateActiveTrack();
+        playTrack(0);
+    </script>
+</body>
+</html>
