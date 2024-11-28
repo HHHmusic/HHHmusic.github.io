@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.png">
+    <meta name="keywords" content="静水深流, 戴森球计划原声音轨, 戴森球计划, 在线播放, 音乐, 戴森球计划黑雾崛起原声音轨, 戴森球计划黑雾崛起, 黑雾崛起">
+    <meta name="description" content="戴森球计划原声音轨在线播放">
+    <meta name="author" content="Ethaniel">
+    <title>戴森球计划原声音轨</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background: url('戴森球计划.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 40px);
+            box-sizing: border-box;
+        }
+
+        .player-container {
+            width: 70%;
+            max-width: 800px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .playlist-and-info {
+            display: flex;
+            gap: 20px;
+        }
+
+        .playlist {
+            width: 70%;
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .playlist-item {
+            padding: 10px;
+            cursor: pointer;
+            border-bottom: 1px solid #ddd;
+            transition: background 0.3s;
+        }
+
+        .playlist-item:hover {
+            background: #f0f0f0;
+        }
+
+        .playlist-item.active {
+            background: #ececec;
+            font-weight: bold;
+        }
+
+        .song-info {
+            width: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-image: url('1.png'); /* 设置背景图片 */
+        background-size: cover; 
+        background-position: center;
+        background-repeat: no-repeat;
+        }
+
+        .song-info h3, .song-info p {
+            margin: 5px 0;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .progress-bar {
+            width: 100%;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+
+        audio {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="player-container">
+        <div class="playlist-and-info">
+            <div class="playlist" id="playlistContainer">
+                <!-- 播放列表将在这里动态添加 -->
+            </div>
+            <div class="song-info" id="songInfo">
+                <h3>歌曲名称</h3>
+                <p>艺术家</p>
+            </div>
+        </div>
+        <audio id="audioPlayer" class="progress-bar" controls></audio>
+        <div class="controls">
+        </div>
+    </div>
+
+    <script>
+        // 播放列表：可以替换为动态生成的音乐文件路径
+        const playlist = [
+            { path: 'music/01 Dyson Sphere Program Theme.mp3', name: '01 戴森球计划 Dyson Sphere Program Theme', artist: 'Elecrystal' },
+            { path: 'music/02 Set Sail.mp3', name: '02 航线 Set Sail', artist: 'Elecrystal' },
+            { path: 'music/03 Everywhere is Nowhere.mp3', name: '03 无垠 Everywhere is Nowhere', artist: 'Elecrystal' },
+            { path: 'music/04 Electron Cell.mp3', name: '04 起点 Electron Cell', artist: 'Elecrystal' },
+            { path: 'music/05 Auroral.mp3', name: '05 前进 Auroral', artist: 'Elecrystal' },
+            { path: 'music/06 March on the Universe.mp3', name: '06 繁荣 March on the Universe', artist: 'Elecrystal' },
+            { path: 'music/07 Realm.mp3', name: '07 荒芜 Realm', artist: 'Elecrystal' },
+            { path: 'music/08 Breeze.mp3', name: '08 空灵 Breeze', artist: 'Elecrystal' },
+            { path: 'music/09 Phlogistic.mp3', name: '09 焚风 Phlogistic', artist: 'Elecrystal' },
+            { path: 'music/10 Quantum Circuit.mp3', name: '10 量子线路 Quantum Circuit', artist: 'Elecrystal' },
+            { path: 'music/11 Undine Embrace.mp3', name: '11 温蒂妮之拥 Undine Embrace', artist: 'Elecrystal' },
+            { path: 'music/12 Blossom Land.mp3', name: '12 花之星 Blossom Land', artist: 'Elecrystal' },
+            { path: 'music/13 Orbital Mechanics.mp3', name: '13 天体运动 Orbital Mechanics', artist: 'Elecrystal' },
+            { path: 'music/14 Streamlines.mp3', name: '14 流线 Streamlines', artist: 'Elecrystal' },
+            { path: 'music/15 Giant.mp3', name: '15 巨构 Giant', artist: 'Elecrystal' },
+            { path: 'music/16 Enigma.mp3', name: '16 谜因 Enigma', artist: 'Elecrystal' },
+            { path: 'music/17 Burning Ashes.mp3', name: '17 燃灰 Burning Ashes', artist: 'Elecrystal' },
+            { path: 'music/18 Waves.mp3', name: '18 水波 Waves', artist: 'Elecrystal' },
+            { path: 'music/19 Initial Shape.mp3', name: '19 雏形 Initial Shape', artist: 'Elecrystal' },
+            { path: 'music/20 Prism.mp3', name: '20 冷彻 Prism', artist: 'Elecrystal' },
+            { path: 'music/21 Exile.mp3', name: '21 流放 Exile', artist: 'Elecrystal' },
+            { path: 'music/22 Rise of the Dark Fog.mp3', name: '22 黑雾崛起 Rise of the Dark Fog', artist: 'Elecrystal' },
+            { path: 'music/23 Seed.mp3', name: '23 火种 Seed', artist: 'Elecrystal' },
+            { path: 'music/24 Observation.mp3', name: '24 观星 Observation', artist: 'Elecrystal' },
+            { path: 'music/25 Detection.mp3', name: '25 全面侦测 Detection', artist: 'Elecrystal' },
+            { path: 'music/26 Battle Plan.mp3', name: '26 谋定 Battle Plan', artist: 'Elecrystal' }
+        ];
+
+        const audioPlayer = document.getElementById('audioPlayer');
+        const playlistContainer = document.getElementById('playlistContainer');
+        const songInfo = document.getElementById('songInfo');
+        let currentTrack = 0;
+
+        // 加载播放列表到界面
+        function loadPlaylist() {
+            playlist.forEach((track, index) => {
+                const item = document.createElement('div');
+                item.className = 'playlist-item';
+                item.textContent = track.name;
+                item.dataset.index = index;
+                item.addEventListener('click', () => playTrack(index));
+                playlistContainer.appendChild(item);
+            });
+        }
+
+        // 更新歌曲信息
+        function updateSongInfo() {
+            const track = playlist[currentTrack];
+            songInfo.querySelector('h3').textContent = track.name;
+            songInfo.querySelector('p').textContent = track.artist;
+        }
+
+        // 高亮当前播放的曲目
+        function updateActiveTrack() {
+            document.querySelectorAll('.playlist-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            const currentItem = document.querySelector(`.playlist-item[data-index='${currentTrack}']`);
+            if (currentItem) currentItem.classList.add('active');
+        }
+
+        // 播放指定曲目
+        function playTrack(index) {
+            currentTrack = index;
+            audioPlayer.src = playlist[currentTrack].path;
+            audioPlayer.play();
+            updateActiveTrack();
+            updateSongInfo();
+        }
+
+        // 当前曲目结束后自动播放下一首
+        audioPlayer.addEventListener('ended', () => {
+            if (currentTrack < playlist.length - 1) {
+                playTrack(currentTrack + 1);
+            } else {
+                playTrack(0);  // 如果是最后一首，循环到第一首
+            }
+        });
+
+        // 初始化播放器
+        loadPlaylist();
+        updateActiveTrack();
+        playTrack(0);
+    </script>
+</body>
+</html>
