@@ -2,11 +2,13 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="https://100713.xyz/H.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="yandex-verification" content="a7df0a1903eaf996" />
     <meta name="360-site-verification" content="8436c264b3932cd2b6b1f8d454b313bc" />
     <meta name="google-site-verification" content="mD2l3_aOmwjXLEvIAyB7bLGNGBnq7u88vPoK2oNuy3c" />
     <meta name="description" content="静水深流博客音乐播放导航页，游戏原声音轨在线播放">
+    <meta name="author" content="Ethaniel">
     <title>原声音轨</title>
     <!-- Google tag (gtag.js) -->
     <script defer src="https://www.googletagmanager.com/gtag/js?id=G-M7CTLKY38C"></script>
@@ -21,12 +23,18 @@
         body {
             font-family: Arial, sans-serif;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            justify-content: flex-start; /* 修改为起始对齐 */
+            align-items: flex-start; /* 修改为起始对齐 */
             flex-direction: column;
-            height: 100vh;
+            min-height: 100vh; /* 使用 min-height 保证页面能够伸缩 */
             margin: 0;
             background-color: #f4f4f4;
+            padding-top: 20px; /* 给顶部添加一些空间，避免标题被挤到顶部 */
+        }
+
+        h1 {
+            text-align: center; /* 水平居中 */
+            width: 100%; /* 占满父容器宽度 */
         }
 
         .container {
@@ -123,7 +131,18 @@
             <div class="card-info">
                 <h2>三伏原声音轨</h2>
                 <p></p>
+            </div>
+        </div>
+        
+        <div class="card-wrapper">
+            <div class="card" onclick="window.location.href='./Infinitode2';">
+                <img src="images/Infinitode2.jpg" alt="Infinitode2">
+            </div>
+            <div class="card-info">
+                <h2>Infinitode2</h2>
+                <p></p>
+            </div>
+        </div>
     </div>
-
 </body>
 </html>
