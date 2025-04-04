@@ -17,115 +17,8 @@
         gtag('config', 'G-M7CTLKY38C');
     </script>    
     <title>助眠音乐：星露谷</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 0;
-            background: url('助眠音乐：星露谷.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: calc(100vh - 40px);
-            box-sizing: border-box;
-        }
-
-        .player-container {
-            width: 70%;
-            max-width: 800px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .playlist-and-info {
-            display: flex;
-            gap: 20px;
-        }
-
-        .playlist {
-            width: 70%;
-            max-height: 300px;
-            overflow-y: auto;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        .playlist-item {
-            padding: 10px;
-            cursor: pointer;
-            border-bottom: 1px solid #ddd;
-            transition: background 0.3s;
-        }
-
-        .playlist-item:hover {
-            background: #f0f0f0;
-        }
-
-        .playlist-item.active {
-            background: #ececec;
-            font-weight: bold;
-        }
-
-        .song-info {
-            width: 30%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        background-size: cover; 
-        background-position: center;
-        background-repeat: no-repeat;
-        }
-
-        .song-info h3, .song-info p {
-            margin: 5px 0;
-        }
-
-        .controls {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .progress-bar {
-            width: 100%;
-        }
-
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-            border-radius: 5px;
-            background-color: #007BFF;
-            color: white;
-            transition: background 0.3s;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-        button:disabled {
-            background-color: #ddd;
-            cursor: not-allowed;
-        }
-
-        audio {
-            width: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="../play.css">
+    <body style="background-image: url('bgImage.jpg');">
 </head>
 <body>
     <div class="player-container">
@@ -146,18 +39,18 @@
     <script>
         // 播放列表：可以替换为动态生成的音乐文件路径
         const playlist = [
-            { path: 'music/1.星露谷序曲.mp3', name: '星露谷物语序曲', artist: 'GENTLE LOVE' },
-            { path: 'music/2.春天（山谷复苏） .mp3', name: '2.春天（山谷复苏）', artist: 'GENTLE LOVE' },
-            { path: 'music/3.夏季（太阳可以弯曲橙色的天空）.mp3', name: '3.夏季（太阳可以弯曲橙色的天空）', artist: 'GENTLE LOVE' },
-            { path: 'music/4.月光水母之舞.mp3', name: '4.月光水母之舞', artist: 'GENTLE LOVE' },
-            { path: 'music/5.秋天（蘑菇的味道）.mp3', name: '5.秋天（蘑菇的味道）', artist: 'GENTLE LOVE' },
-            { path: 'music/6.坠落（渡鸦降临）.mp3', name: '6.坠落（渡鸦降临）', artist: 'GENTLE LOVE' },
-            { path: 'music/7.矿井（布）.mp3', name: '7.矿井（布）', artist: 'GENTLE LOVE' },
-            { path: 'music/8.冬 (冰之夜曲).mp3', name: '8.冬 (冰之夜曲)', artist: 'GENTLE LOVE' },
-            { path: 'music/9.冬日（风可静）.mp3', name: '9.冬日（风可静）', artist: 'GENTLE LOVE' },
-            { path: 'music/10.夜市.mp3', name: '10.夜市', artist: 'GENTLE LOVE' },
-            { path: 'music/11.一颗金星诞生.mp3', name: '11.一颗金星诞生', artist: 'GENTLE LOVE' },
-            { path: 'music/12.四季之美（原创）.mp3', name: '12.四季之美（原创）', artist: 'GENTLE LOVE' }
+            { path: 'https://music.100713.xyz/api/Prescription for Sleep Stardew Valley/1.星露谷序曲.mp3', name: '星露谷物语序曲', artist: 'GENTLE LOVE' },
+            { path: 'https://music.100713.xyz/api/Prescription for Sleep Stardew Valley/2.春天（山谷复苏） .mp3', name: '2.春天（山谷复苏）', artist: 'GENTLE LOVE' },
+            { path: 'https://music.100713.xyz/api/Prescription for Sleep Stardew Valley/3.夏季（太阳可以弯曲橙色的天空）.mp3', name: '3.夏季（太阳可以弯曲橙色的天空）', artist: 'GENTLE LOVE' },
+            { path: 'https://music.100713.xyz/api/Prescription for Sleep Stardew Valley/4.月光水母之舞.mp3', name: '4.月光水母之舞', artist: 'GENTLE LOVE' },
+            { path: 'https://music.100713.xyz/api/Prescription for Sleep Stardew Valley/5.秋天（蘑菇的味道）.mp3', name: '5.秋天（蘑菇的味道）', artist: 'GENTLE LOVE' },
+            { path: 'https://music.100713.xyz/api/Prescription for Sleep Stardew Valley/6.坠落（渡鸦降临）.mp3', name: '6.坠落（渡鸦降临）', artist: 'GENTLE LOVE' },
+            { path: 'https://music.100713.xyz/api/Prescription for Sleep Stardew Valley/7.矿井（布）.mp3', name: '7.矿井（布）', artist: 'GENTLE LOVE' },
+            { path: 'https://music.100713.xyz/api/Prescription for Sleep Stardew Valley/8.冬 (冰之夜曲).mp3', name: '8.冬 (冰之夜曲)', artist: 'GENTLE LOVE' },
+            { path: 'https://music.100713.xyz/api/Prescription for Sleep Stardew Valley/9.冬日（风可静）.mp3', name: '9.冬日（风可静）', artist: 'GENTLE LOVE' },
+            { path: 'https://music.100713.xyz/api/Prescription for Sleep Stardew Valley/10.夜市.mp3', name: '10.夜市', artist: 'GENTLE LOVE' },
+            { path: 'https://music.100713.xyz/api/Prescription for Sleep Stardew Valley/11.一颗金星诞生.mp3', name: '11.一颗金星诞生', artist: 'GENTLE LOVE' },
+            { path: 'https://music.100713.xyz/api/Prescription for Sleep Stardew Valley/12.四季之美（原创）.mp3', name: '12.四季之美（原创）', artist: 'GENTLE LOVE' }
         ];
 
         const audioPlayer = document.getElementById('audioPlayer');
