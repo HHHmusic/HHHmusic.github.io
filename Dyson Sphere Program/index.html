@@ -18,13 +18,12 @@
         gtag('config', 'G-M7CTLKY38C');
     </script>
     <link rel="stylesheet" href="../play.css">
-    <body style="background-image: url('bgImage.jpg');">
+    <body style="background-image: url('bgImage.png');">
 </head>
 <body>
     <div class="player-container">
         <div class="playlist-and-info">
             <div class="playlist" id="playlistContainer">
-                <!-- 播放列表将在这里动态添加 -->
             </div>
             <div class="song-info" id="songInfo">
                 <h3>歌曲名称</h3>
@@ -37,7 +36,6 @@
     </div>
 
     <script>
-        // 播放列表：可以替换为动态生成的音乐文件路径
         const playlist = [
             { path: 'https://music.100713.xyz/api/Dyson Sphere Program/01 Dyson Sphere Program Theme.mp3', name: '01 戴森球计划 Dyson Sphere Program Theme', artist: 'Elecrystal' },
             { path: 'https://music.100713.xyz/api/Dyson Sphere Program/02 Set Sail.mp3', name: '02 航线 Set Sail', artist: 'Elecrystal' },
@@ -72,7 +70,6 @@
         const songInfo = document.getElementById('songInfo');
         let currentTrack = 0;
 
-        // 加载播放列表到界面
         function loadPlaylist() {
             playlist.forEach((track, index) => {
                 const item = document.createElement('div');
@@ -84,14 +81,12 @@
             });
         }
 
-        // 更新歌曲信息
         function updateSongInfo() {
             const track = playlist[currentTrack];
             songInfo.querySelector('h3').textContent = track.name;
             songInfo.querySelector('p').textContent = track.artist;
         }
 
-        // 高亮当前播放的曲目
         function updateActiveTrack() {
             document.querySelectorAll('.playlist-item').forEach(item => {
                 item.classList.remove('active');
@@ -100,7 +95,6 @@
             if (currentItem) currentItem.classList.add('active');
         }
 
-        // 播放指定曲目
         function playTrack(index) {
             currentTrack = index;
             audioPlayer.src = playlist[currentTrack].path;
@@ -109,16 +103,14 @@
             updateSongInfo();
         }
 
-        // 当前曲目结束后自动播放下一首
         audioPlayer.addEventListener('ended', () => {
             if (currentTrack < playlist.length - 1) {
                 playTrack(currentTrack + 1);
             } else {
-                playTrack(0);  // 如果是最后一首，循环到第一首
+                playTrack(0);
             }
         });
 
-        // 初始化播放器
         loadPlaylist();
         updateActiveTrack();
         playTrack(0);
