@@ -55,4 +55,22 @@
     <priority>0.6</priority>
   </url>
 
+    <url>
+    <loc>https://music.100713.xyz/Dead%20Cells</loc>
+    
+    <lastmod>2025-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+    <url>
+    <loc>https://music.100713.xyz/Dead%20Cells%20Chiptune</loc>
+    
+    <lastmod>2025-04-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
 </urlset>
