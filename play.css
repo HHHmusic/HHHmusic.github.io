@@ -71,23 +71,6 @@ background-repeat: no-repeat;
 .progress-bar {
     width: 100%;
 }
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background-color: #007BFF;
-    color: white;
-    transition: background 0.3s;
-}
-button:hover {
-    background-color: #0056b3;
-}
-button:disabled {
-    background-color: #ddd;
-    cursor: not-allowed;
-}
 audio {
     width: 100%;
 }
