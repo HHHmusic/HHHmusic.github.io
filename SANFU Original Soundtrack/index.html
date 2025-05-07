@@ -35,75 +35,27 @@
 
     <script>
         const playlist = [
-            { path: 'https://music.100713.xyz/api/SANFU Original Soundtrack/01.墙中佛-Statue Theme.mp3', name: '01.墙中佛-Statue Theme', artist: '无水醋酸铜　' },
-            { path: 'https://music.100713.xyz/api/SANFU Original Soundtrack/02.妙法莲华-Lotus Theme.mp3', name: '02.妙法莲华-Lotus Theme', artist: '无水醋酸铜　' },
-            { path: 'https://music.100713.xyz/api/SANFU Original Soundtrack/03.缘生缘灭-Serendipity.mp3', name: '03.缘生缘灭-Serendipity', artist: '无水醋酸铜　' },
-            { path: 'https://music.100713.xyz/api/SANFU Original Soundtrack/04.众生相-Paramartha-Satya.mp3', name: '04.众生相-Paramartha-Satya', artist: '无水醋酸铜　' },
-            { path: 'https://music.100713.xyz/api/SANFU Original Soundtrack/05.一出好戏-The Show.mp3', name: '05.一出好戏-The Show', artist: '无水醋酸铜　' },
-            { path: 'https://music.100713.xyz/api/SANFU Original Soundtrack/06.莲花局-The Trick.mp3', name: '06.莲花局-The Trick', artist: '无水醋酸铜　' },
-            { path: 'https://music.100713.xyz/api/SANFU Original Soundtrack/07.明镜止水-Inside Out.mp3', name: '07.明镜止水-Inside Out', artist: '无水醋酸铜　' },
-            { path: 'https://music.100713.xyz/api/SANFU Original Soundtrack/08.二桃杀三士-The Slaughter.mp3', name: '08.二桃杀三士-The Slaughter', artist: '无水醋酸铜　' },
-            { path: 'https://music.100713.xyz/api/SANFU Original Soundtrack/09.生死一线-Holding up.mp3', name: '09.生死一线-Holding up', artist: '无水醋酸铜　' },
-            { path: 'https://music.100713.xyz/api/SANFU Original Soundtrack/10.飘零-The Fall.mp3', name: '10.飘零-The Fall', artist: '无水醋酸铜　' },
-            { path: 'https://music.100713.xyz/api/SANFU Original Soundtrack/11.掌心-The Glory.mp3', name: '11.掌心-The Glory', artist: '无水醋酸铜　' },
-            { path: 'https://music.100713.xyz/api/SANFU Original Soundtrack/12.老徐的愉快小调-Ah_ - Lao Xu.mp3', name: '12.老徐的愉快小调-Ah_ - Lao Xu', artist: '无水醋酸铜　' },
-            { path: 'https://music.100713.xyz/api/SANFU Original Soundtrack/13.小邱的闲暇时光-Being Idle - Xiao Qiu.mp3', name: '13.小邱的闲暇时光-Being Idle - Xiao Qiu', artist: '无水醋酸铜　' },
-            { path: 'https://music.100713.xyz/api/SANFU Original Soundtrack/14.快餐店往事-Once Upon a Time in the Diner.mp3', name: '14.快餐店往事-Once Upon a Time in the Diner', artist: '无水醋酸铜　' },
-            { path: 'https://music.100713.xyz/api/SANFU Original Soundtrack/15.过敏原-Icecream.mp3', name: '15.过敏原-Icecream', artist: '无水醋酸铜　' },
-            { path: 'https://music.100713.xyz/api/SANFU Original Soundtrack/16.楼梯间的月光-Moonlight.mp3', name: '16.楼梯间的月光-Moonlight', artist: '无水醋酸铜　' },
-            { path: 'https://music.100713.xyz/api/SANFU Original Soundtrack/17.舒缓小夜曲-Nocturne.mp3', name: '17.舒缓小夜曲-Nocturne', artist: '无水醋酸铜　' },
-            { path: 'https://music.100713.xyz/api/SANFU Original Soundtrack/18.空中摇篮曲-Skyride.mp3', name: '18.空中摇篮曲-Skyride', artist: '无水醋酸铜　' }
+            { path: '/api/SANFU Original Soundtrack/01.墙中佛-Statue Theme.mp3', name: '01.墙中佛-Statue Theme', artist: '无水醋酸铜　' },
+            { path: '/api/SANFU Original Soundtrack/02.妙法莲华-Lotus Theme.mp3', name: '02.妙法莲华-Lotus Theme', artist: '无水醋酸铜　' },
+            { path: '/api/SANFU Original Soundtrack/03.缘生缘灭-Serendipity.mp3', name: '03.缘生缘灭-Serendipity', artist: '无水醋酸铜　' },
+            { path: '/api/SANFU Original Soundtrack/04.众生相-Paramartha-Satya.mp3', name: '04.众生相-Paramartha-Satya', artist: '无水醋酸铜　' },
+            { path: '/api/SANFU Original Soundtrack/05.一出好戏-The Show.mp3', name: '05.一出好戏-The Show', artist: '无水醋酸铜　' },
+            { path: '/api/SANFU Original Soundtrack/06.莲花局-The Trick.mp3', name: '06.莲花局-The Trick', artist: '无水醋酸铜　' },
+            { path: '/api/SANFU Original Soundtrack/07.明镜止水-Inside Out.mp3', name: '07.明镜止水-Inside Out', artist: '无水醋酸铜　' },
+            { path: '/api/SANFU Original Soundtrack/08.二桃杀三士-The Slaughter.mp3', name: '08.二桃杀三士-The Slaughter', artist: '无水醋酸铜　' },
+            { path: '/api/SANFU Original Soundtrack/09.生死一线-Holding up.mp3', name: '09.生死一线-Holding up', artist: '无水醋酸铜　' },
+            { path: '/api/SANFU Original Soundtrack/10.飘零-The Fall.mp3', name: '10.飘零-The Fall', artist: '无水醋酸铜　' },
+            { path: '/api/SANFU Original Soundtrack/11.掌心-The Glory.mp3', name: '11.掌心-The Glory', artist: '无水醋酸铜　' },
+            { path: '/api/SANFU Original Soundtrack/12.老徐的愉快小调-Ah_ - Lao Xu.mp3', name: '12.老徐的愉快小调-Ah_ - Lao Xu', artist: '无水醋酸铜　' },
+            { path: '/api/SANFU Original Soundtrack/13.小邱的闲暇时光-Being Idle - Xiao Qiu.mp3', name: '13.小邱的闲暇时光-Being Idle - Xiao Qiu', artist: '无水醋酸铜　' },
+            { path: '/api/SANFU Original Soundtrack/14.快餐店往事-Once Upon a Time in the Diner.mp3', name: '14.快餐店往事-Once Upon a Time in the Diner', artist: '无水醋酸铜　' },
+            { path: '/api/SANFU Original Soundtrack/15.过敏原-Icecream.mp3', name: '15.过敏原-Icecream', artist: '无水醋酸铜　' },
+            { path: '/api/SANFU Original Soundtrack/16.楼梯间的月光-Moonlight.mp3', name: '16.楼梯间的月光-Moonlight', artist: '无水醋酸铜　' },
+            { path: '/api/SANFU Original Soundtrack/17.舒缓小夜曲-Nocturne.mp3', name: '17.舒缓小夜曲-Nocturne', artist: '无水醋酸铜　' },
+            { path: '/api/SANFU Original Soundtrack/18.空中摇篮曲-Skyride.mp3', name: '18.空中摇篮曲-Skyride', artist: '无水醋酸铜　' }
         ];
-
-        const audioPlayer = document.getElementById('audioPlayer');
-        const playlistContainer = document.getElementById('playlistContainer');
-        const songInfo = document.getElementById('songInfo');
-        let currentTrack = 0;
-
-        function loadPlaylist() {
-            playlist.forEach((track, index) => {
-                const item = document.createElement('div');
-                item.className = 'playlist-item';
-                item.textContent = track.name;
-                item.dataset.index = index;
-                item.addEventListener('click', () => playTrack(index));
-                playlistContainer.appendChild(item);
-            });
-        }
-
-        function updateSongInfo() {
-            const track = playlist[currentTrack];
-            songInfo.querySelector('h3').textContent = track.name;
-            songInfo.querySelector('p').textContent = track.artist;
-        }
-
-        function updateActiveTrack() {
-            document.querySelectorAll('.playlist-item').forEach(item => {
-                item.classList.remove('active');
-            });
-            const currentItem = document.querySelector(`.playlist-item[data-index='${currentTrack}']`);
-            if (currentItem) currentItem.classList.add('active');
-        }
-
-        function playTrack(index) {
-            currentTrack = index;
-            audioPlayer.src = playlist[currentTrack].path;
-            audioPlayer.play();
-            updateActiveTrack();
-            updateSongInfo();
-        }
-
-        audioPlayer.addEventListener('ended', () => {
-            if (currentTrack < playlist.length - 1) {
-                playTrack(currentTrack + 1);
-            } else {
-                playTrack(0);
-            }
-        });
-
-        loadPlaylist();
-        updateActiveTrack();
-        playTrack(0);
+        const COVER_IMAGE = "/images/三伏.jpg"; 
     </script>
+    <script src="../play.js"></script>
 </body>
 </html>

@@ -35,69 +35,21 @@
 
     <script>
         const playlist = [
-            { path: 'https://music.100713.xyz/api/Prescription for Sleep Stardew Valley/1.星露谷序曲.mp3', name: '星露谷物语序曲', artist: 'GENTLE LOVE' },
-            { path: 'https://music.100713.xyz/api/Prescription for Sleep Stardew Valley/2.春天（山谷复苏） .mp3', name: '2.春天（山谷复苏）', artist: 'GENTLE LOVE' },
-            { path: 'https://music.100713.xyz/api/Prescription for Sleep Stardew Valley/3.夏季（太阳可以弯曲橙色的天空）.mp3', name: '3.夏季（太阳可以弯曲橙色的天空）', artist: 'GENTLE LOVE' },
-            { path: 'https://music.100713.xyz/api/Prescription for Sleep Stardew Valley/4.月光水母之舞.mp3', name: '4.月光水母之舞', artist: 'GENTLE LOVE' },
-            { path: 'https://music.100713.xyz/api/Prescription for Sleep Stardew Valley/5.秋天（蘑菇的味道）.mp3', name: '5.秋天（蘑菇的味道）', artist: 'GENTLE LOVE' },
-            { path: 'https://music.100713.xyz/api/Prescription for Sleep Stardew Valley/6.坠落（渡鸦降临）.mp3', name: '6.坠落（渡鸦降临）', artist: 'GENTLE LOVE' },
-            { path: 'https://music.100713.xyz/api/Prescription for Sleep Stardew Valley/7.矿井（布）.mp3', name: '7.矿井（布）', artist: 'GENTLE LOVE' },
-            { path: 'https://music.100713.xyz/api/Prescription for Sleep Stardew Valley/8.冬 (冰之夜曲).mp3', name: '8.冬 (冰之夜曲)', artist: 'GENTLE LOVE' },
-            { path: 'https://music.100713.xyz/api/Prescription for Sleep Stardew Valley/9.冬日（风可静）.mp3', name: '9.冬日（风可静）', artist: 'GENTLE LOVE' },
-            { path: 'https://music.100713.xyz/api/Prescription for Sleep Stardew Valley/10.夜市.mp3', name: '10.夜市', artist: 'GENTLE LOVE' },
-            { path: 'https://music.100713.xyz/api/Prescription for Sleep Stardew Valley/11.一颗金星诞生.mp3', name: '11.一颗金星诞生', artist: 'GENTLE LOVE' },
-            { path: 'https://music.100713.xyz/api/Prescription for Sleep Stardew Valley/12.四季之美（原创）.mp3', name: '12.四季之美（原创）', artist: 'GENTLE LOVE' }
+            { path: '/api/Prescription for Sleep Stardew Valley/1.星露谷序曲.mp3', name: '星露谷物语序曲', artist: 'GENTLE LOVE' },
+            { path: '/api/Prescription for Sleep Stardew Valley/2.春天（山谷复苏） .mp3', name: '2.春天（山谷复苏）', artist: 'GENTLE LOVE' },
+            { path: '/api/Prescription for Sleep Stardew Valley/3.夏季（太阳可以弯曲橙色的天空）.mp3', name: '3.夏季（太阳可以弯曲橙色的天空）', artist: 'GENTLE LOVE' },
+            { path: '/api/Prescription for Sleep Stardew Valley/4.月光水母之舞.mp3', name: '4.月光水母之舞', artist: 'GENTLE LOVE' },
+            { path: '/api/Prescription for Sleep Stardew Valley/5.秋天（蘑菇的味道）.mp3', name: '5.秋天（蘑菇的味道）', artist: 'GENTLE LOVE' },
+            { path: '/api/Prescription for Sleep Stardew Valley/6.坠落（渡鸦降临）.mp3', name: '6.坠落（渡鸦降临）', artist: 'GENTLE LOVE' },
+            { path: '/api/Prescription for Sleep Stardew Valley/7.矿井（布）.mp3', name: '7.矿井（布）', artist: 'GENTLE LOVE' },
+            { path: '/api/Prescription for Sleep Stardew Valley/8.冬 (冰之夜曲).mp3', name: '8.冬 (冰之夜曲)', artist: 'GENTLE LOVE' },
+            { path: '/api/Prescription for Sleep Stardew Valley/9.冬日（风可静）.mp3', name: '9.冬日（风可静）', artist: 'GENTLE LOVE' },
+            { path: '/api/Prescription for Sleep Stardew Valley/10.夜市.mp3', name: '10.夜市', artist: 'GENTLE LOVE' },
+            { path: '/api/Prescription for Sleep Stardew Valley/11.一颗金星诞生.mp3', name: '11.一颗金星诞生', artist: 'GENTLE LOVE' },
+            { path: '/api/Prescription for Sleep Stardew Valley/12.四季之美（原创）.mp3', name: '12.四季之美（原创）', artist: 'GENTLE LOVE' }
         ];
-
-        const audioPlayer = document.getElementById('audioPlayer');
-        const playlistContainer = document.getElementById('playlistContainer');
-        const songInfo = document.getElementById('songInfo');
-        let currentTrack = 0;
-
-        function loadPlaylist() {
-            playlist.forEach((track, index) => {
-                const item = document.createElement('div');
-                item.className = 'playlist-item';
-                item.textContent = track.name;
-                item.dataset.index = index;
-                item.addEventListener('click', () => playTrack(index));
-                playlistContainer.appendChild(item);
-            });
-        }
-
-        function updateSongInfo() {
-            const track = playlist[currentTrack];
-            songInfo.querySelector('h3').textContent = track.name;
-            songInfo.querySelector('p').textContent = track.artist;
-        }
-
-        function updateActiveTrack() {
-            document.querySelectorAll('.playlist-item').forEach(item => {
-                item.classList.remove('active');
-            });
-            const currentItem = document.querySelector(`.playlist-item[data-index='${currentTrack}']`);
-            if (currentItem) currentItem.classList.add('active');
-        }
-
-        function playTrack(index) {
-            currentTrack = index;
-            audioPlayer.src = playlist[currentTrack].path;
-            audioPlayer.play();
-            updateActiveTrack();
-            updateSongInfo();
-        }
-
-        audioPlayer.addEventListener('ended', () => {
-            if (currentTrack < playlist.length - 1) {
-                playTrack(currentTrack + 1);
-            } else {
-                playTrack(0);
-            }
-        });
-
-        loadPlaylist();
-        updateActiveTrack();
-        playTrack(0);
+        const COVER_IMAGE = "/images/助眠音乐：星露谷.jpg"; 
     </script>
+    <script src="../play.js"></script>
 </body>
 </html>
