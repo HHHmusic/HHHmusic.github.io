@@ -1,3 +1,4 @@
+// === 专辑封面缓存 ===
 let COVER_BLOB_URL = null;
 async function blobToHash(blob) {
     const arrayBuffer = await blob.arrayBuffer();
