@@ -1,0 +1,23 @@
+/api/*.mp3
+/api/*.wav
+/api/*.ogg
+/api/*.flac
+/api/*.aac
+/api/*.m4a
+  Cache-Control: public, max-age=259200
+  Cloudflare-CDN-Cache-Control: max-age=31536000
+
+/index.html
+  Cache-Control: public, max-age=3600
+  Cloudflare-CDN-Cache-Control: max-age=3600
+
+/*.html
+/*.css
+/*.js
+  Cache-Control: public, max-age=18000
+  Cloudflare-CDN-Cache-Control: max-age=259200
+
+/images/*.jpg
+/images/*.png
+  Cache-Control: public, max-age=864000
+  Cloudflare-CDN-Cache-Control: max-age=31536000

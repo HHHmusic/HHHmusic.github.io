@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /visitor-count
+Disallow: /likes/page
+Sitemap: https://music.tealhush.link/sitemap.xml

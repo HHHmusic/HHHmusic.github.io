@@ -27,7 +27,8 @@
             min-height: 100vh;
             margin: 0;
             background-color: #f4f4f4;
-            padding-top: 20px;
+            padding: 20px;
+            box-sizing: border-box;
         }
         h1 {
             text-align: center;
@@ -76,7 +77,16 @@
             font-size: 14px;
             color: #555;
         }
-
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 10px;
+                gap: 15px;
+            }
+            .card {
+                width: 280px;
+                height: 230px;
+            }
+        }
     </style>
 </head>
 <body>
