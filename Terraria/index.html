@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Terraria.ico">
+    <meta name="keywords" content="静水深流, Terraria原声音轨, Terraria, Terraria原声音轨, 泰拉瑞亚, 泰拉瑞亚原声音轨, 在线播放, 音乐">
+    <meta name="description" content="Terraria原声音轨在线播放">
+    <meta name="author" content="Ethaniel">
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'G-M7CTLKY38C');
+    </script>
+    <title>Terraria</title>
+    <link rel="stylesheet" href="../play.css">
+    <body style="background-image: url('bgImage.png');">
+</head>
+<body>
+    <div class="player-container">
+        <div class="playlist-and-info">
+            <div class="playlist" id="playlistContainer">
+            </div>
+            <div class="song-info" id="songInfo">
+                <h3>歌曲名称</h3>
+                <p>艺术家</p>
+            </div>
+        </div>
+        <audio id="audioPlayer" class="progress-bar" controls></audio>
+        <div class="controls">
+        </div>
+    </div>
+
+    <script>
+        const playlist = [
+            { path: '/api/Terraria/1-01. Overworld Day.flac', name: 'Overworld Day', artist: 'James Hannigan' },
+            { path: '/api/Terraria/1-02. Eerie.flac', name: 'Eerie', artist: 'James Hannigan' },
+            { path: '/api/Terraria/1-03. Overworld Night.flac', name: 'Overworld Night', artist: 'James Hannigan' },
+            { path: '/api/Terraria/1-04. Title Screen.flac', name: 'Title Screen', artist: 'James Hannigan' },
+            { path: '/api/Terraria/1-05. Underground.flac', name: 'Underground', artist: 'James Hannigan' },
+            { path: '/api/Terraria/1-06. Boss 1.flac', name: 'Boss 1', artist: 'James Hannigan' },
+            { path: '/api/Terraria/1-07. Jungle.flac', name: 'Jungle', artist: 'James Hannigan' },
+            { path: '/api/Terraria/1-08. Corruption.flac', name: 'Corruption', artist: 'James Hannigan' },
+            { path: '/api/Terraria/1-09. Underground Corruption.flac', name: 'Underground Corruption', artist: 'James Hannigan' },
+            { path: '/api/Terraria/1-10. The Hallow.flac', name: 'The Hallow', artist: 'James Hannigan' },
+            { path: '/api/Terraria/1-11. Boss 2.flac', name: 'Boss 2', artist: 'James Hannigan' },
+            { path: '/api/Terraria/1-12. Underground Hallow.flac', name: 'Underground Hallow', artist: 'James Hannigan' },
+            { path: '/api/Terraria/1-13. Boss 3.flac', name: 'Boss 3', artist: 'James Hannigan' },
+            { path: '/api/Terraria/2-01. Ocean.flac', name: 'Ocean', artist: 'James Hannigan' },
+            { path: '/api/Terraria/2-02. Eclipse.flac', name: 'Eclipse', artist: 'James Hannigan' },
+            { path: '/api/Terraria/2-03. Rain.flac', name: 'Rain', artist: 'James Hannigan' },
+            { path: '/api/Terraria/2-04. Alternate Day.flac', name: 'Alternate Day', artist: 'James Hannigan' },
+            { path: '/api/Terraria/2-05. Space.flac', name: 'Space', artist: 'James Hannigan' },
+            { path: '/api/Terraria/2-06. Golem.flac', name: 'Golem', artist: 'James Hannigan' },
+            { path: '/api/Terraria/2-07. Mushrooms.flac', name: 'Mushrooms', artist: 'James Hannigan' },
+            { path: '/api/Terraria/2-08. Crimson.flac', name: 'Crimson', artist: 'James Hannigan' },
+            { path: '/api/Terraria/2-09. Lihzahrd.flac', name: 'Lihzahrd', artist: 'James Hannigan' },
+            { path: '/api/Terraria/2-10. Ice.flac', name: 'Ice', artist: 'James Hannigan' },
+            { path: '/api/Terraria/2-11. Plantera.flac', name: 'Plantera', artist: 'James Hannigan' },
+            { path: '/api/Terraria/2-12. Dungeon.flac', name: 'Dungeon', artist: 'James Hannigan' },
+            { path: '/api/Terraria/2-13. Lunar Boss.flac', name: 'Lunar Boss', artist: 'James Hannigan' },
+            { path: '/api/Terraria/3-01. Alternate Underground.flac', name: 'Alternate Underground', artist: 'James Hannigan' },
+            { path: '/api/Terraria/3-02. Underground Crimson.flac', name: 'Underground Crimson', artist: 'James Hannigan' },
+            { path: '/api/Terraria/3-03. Goblin Army.flac', name: 'Goblin Army', artist: 'James Hannigan' },
+            { path: '/api/Terraria/3-04. Underworld.flac', name: 'Underworld', artist: 'James Hannigan' },
+            { path: '/api/Terraria/3-05. Pirate Invasion.flac', name: 'Pirate Invasion', artist: 'James Hannigan' },
+            { path: '/api/Terraria/3-06. Pumpkin Moon.flac', name: 'Pumpkin Moon', artist: 'James Hannigan' },
+            { path: '/api/Terraria/3-07. Frost Moon.flac', name: 'Frost Moon', artist: 'James Hannigan' },
+            { path: '/api/Terraria/3-08. Martian Madness.flac', name: 'Martian Madness', artist: 'James Hannigan' },
+            { path: '/api/Terraria/3-09. Lunar Towers.flac', name: 'Lunar Towers', artist: 'James Hannigan' },
+            { path: '/api/Terraria/3-10. Moon Lord.flac', name: 'Moon Lord', artist: 'James Hannigan' },
+            { path: '/api/Terraria/4-01. The Journey Begins.flac', name: 'The Journey Begins', artist: 'James Hannigan' },
+            { path: '/api/Terraria/4-02. Underground Ice.flac', name: 'Underground Ice', artist: 'James Hannigan' },
+            { path: '/api/Terraria/4-03. Space Day.flac', name: 'Space Day', artist: 'James Hannigan' },
+            { path: '/api/Terraria/4-04. Empress of Light.flac', name: 'Empress of Light', artist: 'James Hannigan' },
+            { path: '/api/Terraria/4-05. Queen Slime.flac', name: 'Queen Slime', artist: 'James Hannigan' },
+            { path: '/api/Terraria/4-06. Slime Rain.flac', name: 'Slime Rain', artist: 'James Hannigan' },
+            { path: '/api/Terraria/4-07. Desert.flac', name: 'Desert', artist: 'James Hannigan' },
+            { path: '/api/Terraria/4-08. Underground Desert.flac', name: 'Underground Desert', artist: 'James Hannigan' },
+            { path: '/api/Terraria/4-09. Sandstorm.flac', name: 'Sandstorm', artist: 'James Hannigan' },
+            { path: '/api/Terraria/4-10. Old One\'s Army.flac', name: 'Old One\'s Army', artist: 'James Hannigan' },
+            { path: '/api/Terraria/4-11. Underground Jungle.flac', name: 'Underground Jungle', artist: 'James Hannigan' },
+            { path: '/api/Terraria/4-12. Jungle Night.flac', name: 'Jungle Night', artist: 'James Hannigan' },
+            { path: '/api/Terraria/4-13. Queen Bee.flac', name: 'Queen Bee', artist: 'James Hannigan' },
+            { path: '/api/Terraria/4-14. Graveyard.flac', name: 'Graveyard', artist: 'James Hannigan' },
+            { path: '/api/Terraria/4-15. Town Day.flac', name: 'Town Day', artist: 'James Hannigan' },
+            { path: '/api/Terraria/4-16. High Wind.flac', name: 'High Wind', artist: 'James Hannigan' },
+            { path: '/api/Terraria/4-17. Storm.flac', name: 'Storm', artist: 'James Hannigan' },
+            { path: '/api/Terraria/4-18. Duke Fishron.flac', name: 'Duke Fishron', artist: 'James Hannigan' },
+            { path: '/api/Terraria/4-19. Morning Rain.flac', name: 'Morning Rain', artist: 'James Hannigan' },
+            { path: '/api/Terraria/4-20. Ocean Night.flac', name: 'Ocean Night', artist: 'James Hannigan' },
+            { path: '/api/Terraria/4-21. Town Night.flac', name: 'Town Night', artist: 'James Hannigan' },
+            { path: '/api/Terraria/4-22. Alt Title.flac', name: 'Alt Title', artist: 'James Hannigan' },
+            { path: '/api/Terraria/4-23. Journey\'s End - Credits.flac', name: 'Journey\'s End - Credits', artist: 'James Hannigan' },
+            { path: '/api/Terraria/4-24. Terraria Day Theme Remix.flac', name: 'Terraria Day Theme Remix', artist: 'James Hannigan' }
+        ];
+        const COVER_IMAGE = "/images/Terraria.jpg"; 
+    </script>
+    <script src="../play.js"></script>
+</body>
+</html>

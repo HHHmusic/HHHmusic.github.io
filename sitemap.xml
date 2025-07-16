@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://music.100713.xyz/Stardew%20Valley%20Soundtrack</loc>
+    <loc>https://music.teahush.link/Stardew%20Valley%20Soundtrack</loc>
     
     <lastmod>2024-11-27</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
 
   <url>
-    <loc>https://music.100713.xyz/Dyson%20Sphere%20Program</loc>
+    <loc>https://music.teahush.link/Dyson%20Sphere%20Program</loc>
     
     <lastmod>2024-11-28</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://music.100713.xyz/Prescription%20for%20Sleep%20Stardew%20Valley</loc>
+    <loc>https://music.teahush.link/Prescription%20for%20Sleep%20Stardew%20Valley</loc>
     
     <lastmod>2024-11-28</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://music.100713.xyz/SANFU%20Original%20Soundtrack</loc>
+    <loc>https://music.teahush.link/SANFU%20Original%20Soundtrack</loc>
     
     <lastmod>2024-11-28</lastmod>
     
@@ -38,7 +38,7 @@
   </url>
 
   <url>
-    <loc>https://music.100713.xyz/Infinitode2</loc>
+    <loc>https://music.teahush.link/Infinitode2</loc>
     
     <lastmod>2024-12-03</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
 
   <url>
-    <loc>https://music.100713.xyz/SANFU%20Original%20Soundtrack</loc>
+    <loc>https://music.teahush.link/SANFU%20Original%20Soundtrack</loc>
     
     <lastmod>2025-01-10</lastmod>
     
@@ -55,8 +55,8 @@
     <priority>0.6</priority>
   </url>
 
-    <url>
-    <loc>https://music.100713.xyz/Dead%20Cells</loc>
+  <url>
+    <loc>https://music.teahush.link/Dead%20Cells</loc>
     
     <lastmod>2025-04-04</lastmod>
     
@@ -64,8 +64,8 @@
     <priority>0.6</priority>
   </url>
 
-    <url>
-    <loc>https://music.100713.xyz/Dead%20Cells%20Chiptune</loc>
+  <url>
+    <loc>https://music.teahush.link/Dead%20Cells%20Chiptune</loc>
     
     <lastmod>2025-04-04</lastmod>
     
@@ -73,4 +73,30 @@
     <priority>0.6</priority>
   </url>
 
+  <url>
+    <loc>https://music.teahush.link/Starbound</loc>
+    
+    <lastmod>2025-07-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://music.teahush.link/Terraria</loc>
+    
+    <lastmod>2025-07-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+    <url>
+    <loc>https://music.teahush.link/Terraria%20Otherworld</loc>
+    
+    <lastmod>2025-07-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
