@@ -74,6 +74,30 @@ async function loadOrFetchCover(callback) {
 }
 // === 播放逻辑 ===
 const audioPlayer = document.getElementById('audioPlayer');
+function getFirstPlayableTrack() {
+    for(let i=0;i<playlist.length;i++) {
+        if(playlist[i] && playlist[i].path) return i;
+    }
+    return null;
+}
+function getNextPlayableTrack(from) {
+    for(let i=from+1;i<playlist.length;i++) {
+        if(playlist[i] && playlist[i].path) return i;
+    }
+    for(let i=0;i<playlist.length;i++) {
+        if(playlist[i] && playlist[i].path) return i;
+    }
+    return null;
+}
+function getPrevPlayableTrack(from) {
+    for(let i=from-1;i>=0;i--) {
+        if(playlist[i] && playlist[i].path) return i;
+    }
+    for(let i=playlist.length-1; i>=0; i--) {
+        if(playlist[i] && playlist[i].path) return i;
+    }
+    return null;
+}
 const playlistContainer = document.getElementById('playlistContainer');
 const songInfo = document.getElementById('songInfo');
 let currentTrack = 0;
@@ -118,19 +142,17 @@ function updateActiveTrack() {
     if (currentItem) currentItem.classList.add('active');
 }
 function playTrack(index, userInitiated = false) {
+    if (!playlist[index] || !playlist[index].path) return;
     currentTrack = index;
     audioPlayer.src = playlist[currentTrack].path;
-    updateActiveTrack();
-    updateSongInfo();
+    updateActiveTrack && updateActiveTrack();
+    updateSongInfo && updateSongInfo();
     updateMediaSession && updateMediaSession();
     tryAutoPlay();
 }
 audioPlayer.addEventListener('ended', () => {
-    if (currentTrack < playlist.length - 1) {
-        playTrack(currentTrack + 1, false);
-    } else {
-        playTrack(0, false);
-    }
+    const next = getNextPlayableTrack(currentTrack);
+    if (next !== null) playTrack(next, false);
 });
 
 function listenVisibilityForAutoplay() {
@@ -151,7 +173,8 @@ function listenVisibilityForAutoplay() {
 loadOrFetchCover(function() {
     loadPlaylist();
     updateActiveTrack();
-    playTrack(0, false);
+    const firstTrack = getFirstPlayableTrack();
+    if(firstTrack !== null) playTrack(firstTrack, false);
     listenVisibilityForAutoplay();
 });
 // === 全局按键控制 ===
