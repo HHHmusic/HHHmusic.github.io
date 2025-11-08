@@ -74,3 +74,17 @@ background-repeat: no-repeat;
 audio {
     width: 100%;
 }
+.playlist-chapter {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    padding-left: 10px;
+    font-weight: bold;
+    color: #aaa;
+}
+.playlist-chapter > .chapter-sep {
+    flex: 1;
+    height: 0;
+    border-bottom: 1px solid #ccc;
+    margin-left: 12px;
+}

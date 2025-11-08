@@ -1,6 +1,9 @@
 // === 专辑封面缓存 ===
 let COVER_BLOB_URL = null;
 async function blobToHash(blob) {
+    if (!window.crypto || !window.crypto.subtle) {
+        return null;
+    }
     const arrayBuffer = await blob.arrayBuffer();
     const hashBuffer = await crypto.subtle.digest('SHA-256', arrayBuffer);
     const hashArray = Array.from(new Uint8Array(hashBuffer));
@@ -43,15 +46,29 @@ async function loadOrFetchCover(callback) {
     let localBlob = cache && cache.blob;
     let localHash = cache && cache.hash;
 
+    if (!window.crypto || !window.crypto.subtle) {
+        if (localBlob) {
+            COVER_BLOB_URL = URL.createObjectURL(localBlob);
+            if (typeof callback === "function") callback();
+            return;
+        }
+    }
+
     const response = await fetch(COVER_IMAGE, {cache: "reload"});
     const blob = await response.blob();
-    const hash = await blobToHash(blob);
 
-    if (hash === localHash && localBlob) {
+    let hash = null;
+    try {
+        hash = await blobToHash(blob);
+    } catch (e) {}
+
+    if (hash && hash === localHash && localBlob) {
         COVER_BLOB_URL = URL.createObjectURL(localBlob);
     } else {
         COVER_BLOB_URL = URL.createObjectURL(blob);
-        await saveCoverToDB(COVER_IMAGE, {blob, hash});
+        if (hash) {
+            await saveCoverToDB(COVER_IMAGE, {blob, hash});
+        }
     }
     if (typeof callback === "function") callback();
 }
@@ -71,13 +88,21 @@ function tryAutoPlay() {
 }
 
 function loadPlaylist() {
-    playlist.forEach((track, index) => {
-        const item = document.createElement('div');
-        item.className = 'playlist-item';
-        item.textContent = track.name;
-        item.dataset.index = index;
-        item.addEventListener('click', () => playTrack(index, true));
-        playlistContainer.appendChild(item);
+    playlistContainer.innerHTML = '';
+    playlist.forEach((item, index) => {
+        if (item.type === 'chapter') {
+            const chapterDiv = document.createElement('div');
+            chapterDiv.className = 'playlist-chapter';
+            chapterDiv.innerHTML = `<span>${item.title}</span><span class="chapter-sep"></span>`;
+            playlistContainer.appendChild(chapterDiv);
+        } else {
+            const musicDiv = document.createElement('div');
+            musicDiv.className = 'playlist-item';
+            musicDiv.textContent = item.name;
+            musicDiv.dataset.index = index;
+            musicDiv.addEventListener('click', () => playTrack(index, true));
+            playlistContainer.appendChild(musicDiv);
+        }
     });
 }
 function updateSongInfo() {
