@@ -3,7 +3,7 @@ const path = require('path');
 
 // 游戏-作者映射
 const config = {
-    'Kingdom Two Crowns': 'Andreas Hald',
+    'Oxygen Not Included': 'Vince de Vera',
 };
 // 音频文件扩展
 const audioExtensions = ['.mp3', '.wav', '.ogg', '.m4a', '.flac'];
