@@ -3,7 +3,7 @@ const path = require('path');
 
 // 游戏-作者映射
 const config = {
-    'Oxygen Not Included': 'Vince de Vera',
+    'Red Alert 2': 'Frank Klepacki',
 };
 // 音频文件扩展
 const audioExtensions = ['.mp3', '.wav', '.ogg', '.m4a', '.flac'];
