@@ -1,0 +1,25 @@
+{
+    "HomeTitle": "助眠音乐：星露谷",
+	"Title": "助眠音乐：星露谷",
+    "Keywords": "静水深流, 星露谷物语原声音轨, 星露谷物语, 助眠音乐：星露谷, 在线播放, 音乐, Prescription for Sleep Stardew Valley",
+    "Description": "助眠音乐：星露谷在线播放",
+    "Icon": "/images/Prescription for Sleep Stardew Valley/logo.png",
+    "BgImg": "/images/Prescription for Sleep Stardew Valley/bgImage.jpg",
+    "OgImg": "https://music.hcyhub.com/images/Prescription for Sleep Stardew Valley/助眠音乐：星露谷.webp",
+    "CoverImg": "/images/Prescription for Sleep Stardew Valley/助眠音乐：星露谷.webp",
+	"Dir": "./Prescription for Sleep Stardew Valley",
+    "Files": [
+        {"path":"/api/Prescription for Sleep Stardew Valley/1.星露谷序曲.mp3","name":"星露谷物语序曲","artist":"GENTLE LOVE"},
+        {"path":"/api/Prescription for Sleep Stardew Valley/2.春天（山谷复苏） .mp3","name":"2.春天（山谷复苏）","artist":"GENTLE LOVE"},
+        {"path":"/api/Prescription for Sleep Stardew Valley/3.夏季（太阳可以弯曲橙色的天空）.mp3","name":"3.夏季（太阳可以弯曲橙色的天空）","artist":"GENTLE LOVE"},
+        {"path":"/api/Prescription for Sleep Stardew Valley/4.月光水母之舞.mp3","name":"4.月光水母之舞","artist":"GENTLE LOVE"},
+        {"path":"/api/Prescription for Sleep Stardew Valley/5.秋天（蘑菇的味道）.mp3","name":"5.秋天（蘑菇的味道）","artist":"GENTLE LOVE"},
+        {"path":"/api/Prescription for Sleep Stardew Valley/6.坠落（渡鸦降临）.mp3","name":"6.坠落（渡鸦降临）","artist":"GENTLE LOVE"},
+        {"path":"/api/Prescription for Sleep Stardew Valley/7.矿井（布）.mp3","name":"7.矿井（布）","artist":"GENTLE LOVE"},
+        {"path":"/api/Prescription for Sleep Stardew Valley/8.冬 (冰之夜曲).mp3","name":"8.冬 (冰之夜曲)","artist":"GENTLE LOVE"},
+        {"path":"/api/Prescription for Sleep Stardew Valley/9.冬日（风可静）.mp3","name":"9.冬日（风可静）","artist":"GENTLE LOVE"},
+        {"path":"/api/Prescription for Sleep Stardew Valley/10.夜市.mp3","name":"10.夜市","artist":"GENTLE LOVE"},
+        {"path":"/api/Prescription for Sleep Stardew Valley/11.一颗金星诞生.mp3","name":"11.一颗金星诞生","artist":"GENTLE LOVE"},
+        {"path":"/api/Prescription for Sleep Stardew Valley/12.四季之美（原创）.mp3","name":"12.四季之美（原创）","artist":"GENTLE LOVE"}
+    ]
+}

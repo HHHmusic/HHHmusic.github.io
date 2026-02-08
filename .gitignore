@@ -1,4 +1,5 @@
-api/**/*.mp3
-api/**/*.flac
-.stignore
 .stfolder/**
+public/**
+node_modules/**
+source/api/**/*.flac
+source/api/**/*.mp3

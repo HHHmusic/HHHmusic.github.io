@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <%- include('Head', { pageType: 'Home' }) %>
+</head>
+<body>
+
+    <h1>静水深流 | 音乐空间</h1>
+    <div class="container">
+        <% home.forEach(item => { %>
+            <div class="card-wrapper">
+                <div class="card" onclick="window.location.href='./<%= item.MusicDir %>';">
+                    <img src="images/<%= item.MusicImg %>" alt="<%= item.MusicTitle %>">
+                </div>
+                <div class="card-info">
+                    <h2><%= item.MusicTitle %></h2>
+                    <p></p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+
+</body>
+</html>

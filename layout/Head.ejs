@@ -1,0 +1,35 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Ethaniel">
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-M7CTLKY38C');
+</script>
+
+
+<% if (pageType === 'Home') { %>
+    <link rel="icon" href="https://hcyhub.com/H.svg">
+    <meta name="yandex-verification" content="a7df0a1903eaf996" />
+    <meta name="360-site-verification" content="8436c264b3932cd2b6b1f8d454b313bc" />
+    <meta name="google-site-verification" content="mD2l3_aOmwjXLEvIAyB7bLGNGBnq7u88vPoK2oNuy3c" />
+    <meta name="description" content="静水深流博客音乐播放导航页，游戏原声音轨在线播放">
+    <title>静水深流 | 音乐空间</title>
+    <link rel="stylesheet" href="/api/index.css">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="静水深流 | 音乐空间">
+    <meta property="og:description" content="静水深流博客音乐播放导航页，游戏原声音轨在线播放">
+    <meta property="og:image" content="https://hcyhub.com/H.svg">
+<% } else if (pageType==='MusicPlay' ) { %>
+    <link rel="stylesheet" href="/api/play.css">
+    <link rel="icon" href="<%= music.icon %>">
+    <title><%= music.title %></title>
+    <meta name="keywords" content="静水深流, Frostpunk原声音轨, Frostpunk, 冰汽时代原声音轨, 冰汽时代, 在线播放, 音乐">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="<%= music.title %>">
+    <meta property="og:description" content="<%= music.desc %>">
+    <meta property="og:image" content="<%= music.image %>">
+<% } %>
+

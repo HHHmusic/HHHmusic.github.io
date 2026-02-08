@@ -1,0 +1,29 @@
+{
+    "HomeTitle": "红色警戒2",
+	"Title": "红色警戒2",
+    "Keywords": "静水深流, 红色警戒2原声音轨, 红色警戒2, Red Alert 2原声音轨, Red Alert 2, Red Alert 2原声音轨, 在线播放, 音乐",
+    "Description": "红色警戒2原声音轨在线播放",
+    "Icon": "/images/Red Alert 2/favicon.ico",
+    "BgImg": "/images/Red Alert 2/bgImage.jpg",
+    "OgImg": "https://music.hcyhub.com/images/Red Alert 2.webp",
+    "CoverImg": "/images/Red Alert 2/Red Alert 2.webp",
+	"Dir": "./Red Alert 2",
+    "Files": [
+        {"path":"/api/Red Alert 2/200meter.mp3","name":"200meter","artist":"Frank Klepacki"},
+        {"path":"/api/Red Alert 2/blowitup.mp3","name":"blowitup","artist":"Frank Klepacki"},
+        {"path":"/api/Red Alert 2/burn.mp3","name":"burn","artist":"Frank Klepacki"},
+        {"path":"/api/Red Alert 2/destroy.mp3","name":"destroy","artist":"Frank Klepacki"},
+        {"path":"/api/Red Alert 2/eaglehun.mp3","name":"eaglehun","artist":"Frank Klepacki"},
+        {"path":"/api/Red Alert 2/fortific.mp3","name":"fortific","artist":"Frank Klepacki"},
+        {"path":"/api/Red Alert 2/grinder.mp3","name":"grinder","artist":"Frank Klepacki"},
+        {"path":"/api/Red Alert 2/hm2.mp3","name":"hm2","artist":"Frank Klepacki"},
+        {"path":"/api/Red Alert 2/indeep.mp3","name":"indeep","artist":"Frank Klepacki"},
+        {"path":"/api/Red Alert 2/industro.mp3","name":"industro","artist":"Frank Klepacki"},
+        {"path":"/api/Red Alert 2/jank.mp3","name":"jank","artist":"Frank Klepacki"},
+        {"path":"/api/Red Alert 2/motorize.mp3","name":"motorize","artist":"Frank Klepacki"},
+        {"path":"/api/Red Alert 2/power.mp3","name":"power","artist":"Frank Klepacki"},
+        {"path":"/api/Red Alert 2/ra2-opt.mp3","name":"ra2-opt","artist":"Frank Klepacki"},
+        {"path":"/api/Red Alert 2/ra2-sco.mp3","name":"ra2-sco","artist":"Frank Klepacki"},
+        {"path":"/api/Red Alert 2/tension.mp3","name":"tension","artist":"Frank Klepacki"}
+	]
+}

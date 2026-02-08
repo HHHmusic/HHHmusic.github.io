@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <%- include('Head', { pageType: 'MusicPlay'}) %>
+</head>
+
+<body style="background-image: url('<%= music.bgimg %>');">
+    <div class="player-container">
+        <div class="playlist-and-info">
+            <div class="playlist" id="playlistContainer">
+                </div>
+            <div class="song-info" id="songInfo">
+                <h3>歌曲名称</h3>
+                <p>艺术家</p>
+            </div>
+        </div>
+        
+        <audio id="audioPlayer" class="progress-bar" controls></audio>
+        
+        <div class="controls"></div>
+    </div>
+
+    <script>
+        const playlist = <%- JSON.stringify(music.files) %>;
+        const COVER_IMAGE = "<%= music.coverimg %>";
+    </script>
+    <script src="/api/play.js"></script>
+</body>
+</html>

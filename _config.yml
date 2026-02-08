@@ -1,0 +1,17 @@
+src: source
+public: public
+template: layout
+ignore:
+domain: music.hcyhub.com
+port: 8081
+templateAffect:
+  Home.ejs: Home
+  MusicPlay.ejs: MusicPlay
+  head.ejs: All
+
+clean:
+  keep:
+    - .git
+    - .gitignore
+    - .stignore
+    - .stfolder
