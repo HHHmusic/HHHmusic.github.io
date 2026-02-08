@@ -2,126 +2,51 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="logo.png">
-    <meta name="keywords" content="静水深流, Starbound原声音轨, Starbound, 星际边境原声音轨, 星际边境, 在线播放, 音乐">
-    <meta name="description" content="Starbound原声音轨在线播放">
-    <meta name="author" content="Ethaniel">
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        
-        gtag('config', 'G-M7CTLKY38C');
-    </script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Ethaniel">
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-M7CTLKY38C');
+</script>
+
+
+
+    <link rel="stylesheet" href="/api/play.css">
+    <link rel="icon" href="images/Starbound/logo.png">
     <title>Starbound</title>
-    <link rel="stylesheet" href="../play.css">
-    <body style="background-image: url('bgImage.png');">
+    <meta name="keywords" content="静水深流, Frostpunk原声音轨, Frostpunk, 冰汽时代原声音轨, 冰汽时代, 在线播放, 音乐">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="静水深流 | 音乐空间">
+    <meta property="og:title" content="Starbound">
     <meta property="og:description" content="Starbound原声音轨在线播放">
-    <meta property="og:image" content="https://music.hcyhub.com/images/Starbound.webp">
+    <meta property="og:image" content="https://music.hcyhub.com/images/Starbound/Starbound.webp">
+
+
+
 </head>
-<body>
+
+<body style="background-image: url('images/Starbound/Starbound.webp');">
     <div class="player-container">
         <div class="playlist-and-info">
             <div class="playlist" id="playlistContainer">
-            </div>
+                </div>
             <div class="song-info" id="songInfo">
                 <h3>歌曲名称</h3>
                 <p>艺术家</p>
             </div>
         </div>
+        
         <audio id="audioPlayer" class="progress-bar" controls></audio>
-        <div class="controls">
-        </div>
+        
+        <div class="controls"></div>
     </div>
 
     <script>
-        const playlist = [
-            { path: '/api/Starbound/1-01 Starbound.mp3', name: '01 Starbound', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-02 Planetarium (The Protectorate).mp3', name: '02 Planetarium (The Protectorate)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-03 Arctic Battle 1 (The Ruin Attacks).mp3', name: '03 Arctic Battle 1 (The Ruin Attacks)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-04 Atlas (Main Planet Theme).mp3', name: '04 Atlas (Main Planet Theme)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-05 Accretion Disc.mp3', name: '05 Accretion Disc', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-06 Arctic Constellation 1.mp3', name: '06 Arctic Constellation 1', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-07 Arctic Constellation 2.mp3', name: '07 Arctic Constellation 2', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-08 Blue Straggler.mp3', name: '08 Blue Straggler', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-09 Cygnus X1.mp3', name: '09 Cygnus X1', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-10 Epsilon Indi.mp3', name: '10 Epsilon Indi', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-11 Eridanus Supervoid.mp3', name: '11 Eridanus Supervoid', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-12 Europa.mp3', name: '12 Europa', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-13 Haiku.mp3', name: '13 Haiku', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-14 Horsehead Nebula.mp3', name: '14 Horsehead Nebula', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-15 Hymn to the Stars.mp3', name: '15 Hymn to the Stars', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-16 Jupiter.mp3', name: '16 Jupiter', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-17 Large Magellanic Cloud.mp3', name: '17 Large Magellanic Cloud', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-18 M54.mp3', name: '18 M54', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-19 Mercury.mp3', name: '19 Mercury', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-20 Mira (Altair).mp3', name: '20 Mira (Altair)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-21 Nomads (Passacaglia).mp3', name: '21 Nomads (Passacaglia)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-22 On the Beach at Night.mp3', name: '22 On the Beach at Night', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-23 Procyon.mp3', name: '23 Procyon', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-24 Psyche.mp3', name: '24 Psyche', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-25 Stellar Formation.mp3', name: '25 Stellar Formation', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-26 Tranquility Base.mp3', name: '26 Tranquility Base', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-27 Vast, Immortal Suns.mp3', name: '27 Vast, Immortal Suns', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-28 Temple of Kluex (The Ark).mp3', name: '28 Temple of Kluex (The Ark)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-29 The Eternal Tide (Esther\'s Story).mp3', name: '29 The Eternal Tide (Esther\'s Story)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-30 Ocean Battle 1 (Erchius Mining Facility).mp3', name: '30 Ocean Battle 1 (Erchius Mining Facility)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-31 Gravitational Collapse (Main Boss Theme).mp3', name: '31 Gravitational Collapse (Main Boss Theme)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-32 Desert Exploration 2 (Tech Courses).mp3', name: '32 Desert Exploration 2 (Tech Courses)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-33 The Peacekeepers (Peacekeeper Stations).mp3', name: '33 The Peacekeepers (Peacekeeper Stations)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-34 Dead or Alive (VS. Criminal Encounters).mp3', name: '34 Dead or Alive (VS. Criminal Encounters)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-35 Housecleaning (VS. VR Encounters).mp3', name: '35 Housecleaning (VS. VR Encounters)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-36 Lava Exploration 2 (Ceremonial Hunting Caverns).mp3', name: '36 Lava Exploration 2 (Ceremonial Hunting Caverns)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-37 Arctic Exploration 1.mp3', name: '37 Arctic Exploration 1', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-38 Arctic Exploration 2.mp3', name: '38 Arctic Exploration 2', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-39 I Was the Sun (Before It Was Cool) (The Arena).mp3', name: '39 I Was the Sun (Before It Was Cool) (The Arena)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-40 Event Horizon (VS. Arena Boss 2).mp3', name: '40 Event Horizon (VS. Arena Boss 2)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-41 Impact Event (VS. Arena Boss 3).mp3', name: '41 Impact Event (VS. Arena Boss 3)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-42 Arctic Battle 2 (VS. Dreadwing the Penguin).mp3', name: '42 Arctic Battle 2 (VS. Dreadwing the Penguin)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-43 The Deep (Grand Pagoda Library).mp3', name: '43 The Deep (Grand Pagoda Library)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-44 Arctic Battle 3 (VS. Asra Nox).mp3', name: '44 Arctic Battle 3 (VS. Asra Nox)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-45 Body Electric.mp3', name: '45 Body Electric', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-46 Crystal Exploration 1.mp3', name: '46 Crystal Exploration 1', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-47 Crystal Exploration 2.mp3', name: '47 Crystal Exploration 2', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-48 Desert Exploration 1.mp3', name: '48 Desert Exploration 1', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-49 Drosera.mp3', name: '49 Drosera', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-50 Forsaken Grotto.mp3', name: '50 Forsaken Grotto', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-51 Inviolate.mp3', name: '51 Inviolate', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-52 Lava Exploration 1.mp3', name: '52 Lava Exploration 1', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-53 Ultramarine.mp3', name: '53 Ultramarine', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-54 Casiopeia (Great Sovereign Temple).mp3', name: '54 Casiopeia (Great Sovereign Temple)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-55 Error 0xbfaf000.mp3', name: '55 Error 0xbfaf000', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/2-13 Tentacle Exploration 1 (Unused).mp3', name: '13 Tentacle Exploration 1 (Unused)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-57 The Ruin (Forest Battle 2b) (VS. Heart of Ruin).mp3', name: '57 The Ruin (Forest Battle 2b) (VS. Heart of Ruin)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-58 Stellar Acclimation (Credits).mp3', name: '58 Stellar Acclimation (Credits)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-59 The Apex (Ice Vaults).mp3', name: '59 The Apex (Ice Vaults)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/1-60 Swansong (VS. Swansong).mp3', name: '60 Swansong (VS. Swansong)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/2-01 Desert Battle 2 (Unused).mp3', name: '01 Desert Battle 2 (Unused)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/2-02 Forest Battle 1 (Unused).mp3', name: '02 Forest Battle 1 (Unused)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/2-03 Forest Battle 2 (Unused).mp3', name: '03 Forest Battle 2 (Unused)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/2-04 Forest Exploration 1 (Unused).mp3', name: '04 Forest Exploration 1 (Unused)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/2-05 Forest Exploration 2 (Unused).mp3', name: '05 Forest Exploration 2 (Unused)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/2-06 Forest (Unused).mp3', name: '06 Forest (Unused)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/2-07 Glacial Horizon (Unused).mp3', name: '07 Glacial Horizon (Unused)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/2-08 Home Concept (Unused).mp3', name: '08 Home Concept (Unused)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/2-09 Ocean Exploration 1 (Unused).mp3', name: '09 Ocean Exploration 1 (Unused)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/2-10 Ocean Exploration 2 (Unused).mp3', name: '10 Ocean Exploration 2 (Unused)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/2-11 Scorian Flow (Unused).mp3', name: '11 Scorian Flow (Unused)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/2-12 Tentacle Battle 1 (Unused).mp3', name: '12 Tentacle Battle 1 (Unused)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/2-13 Tentacle Exploration 1 (Unused).mp3', name: '13 Tentacle Exploration 1 (Unused)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/2-14 Tentacle Exploration 2 (Unused).mp3', name: '14 Tentacle Exploration 2 (Unused)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/2-15 Unfinished Track (Unused).mp3', name: '15 Unfinished Track (Unused)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/2-16 Via Aurora (Unused).mp3', name: '16 Via Aurora (Unused)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/2-17 Dancebound (Bonus Track).mp3', name: '17 Dancebound (Bonus Track)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/2-18 Title Theme Concept (Bonus Track).mp3', name: '18 Title Theme Concept (Bonus Track)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/2-19 Jupiter (Remix).mp3', name: '19 Jupiter (Remix)', artist: 'Curtis Schweitzer' },
-            { path: '/api/Starbound/2-20 Weep not, my child.mp3', name: '20 Weep not, my child', artist: 'Curtis Schweitzer' }
-        ];
-        const COVER_IMAGE = "/images/Starbound.webp"; 
+        const playlist = [{"path":"/api/Starbound/1-01 Starbound.mp3","name":"01 Starbound","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-02 Planetarium (The Protectorate).mp3","name":"02 Planetarium (The Protectorate)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-03 Arctic Battle 1 (The Ruin Attacks).mp3","name":"03 Arctic Battle 1 (The Ruin Attacks)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-04 Atlas (Main Planet Theme).mp3","name":"04 Atlas (Main Planet Theme)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-05 Accretion Disc.mp3","name":"05 Accretion Disc","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-06 Arctic Constellation 1.mp3","name":"06 Arctic Constellation 1","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-07 Arctic Constellation 2.mp3","name":"07 Arctic Constellation 2","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-08 Blue Straggler.mp3","name":"08 Blue Straggler","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-09 Cygnus X1.mp3","name":"09 Cygnus X1","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-10 Epsilon Indi.mp3","name":"10 Epsilon Indi","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-11 Eridanus Supervoid.mp3","name":"11 Eridanus Supervoid","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-12 Europa.mp3","name":"12 Europa","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-13 Haiku.mp3","name":"13 Haiku","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-14 Horsehead Nebula.mp3","name":"14 Horsehead Nebula","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-15 Hymn to the Stars.mp3","name":"15 Hymn to the Stars","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-16 Jupiter.mp3","name":"16 Jupiter","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-17 Large Magellanic Cloud.mp3","name":"17 Large Magellanic Cloud","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-18 M54.mp3","name":"18 M54","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-19 Mercury.mp3","name":"19 Mercury","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-20 Mira (Altair).mp3","name":"20 Mira (Altair)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-21 Nomads (Passacaglia).mp3","name":"21 Nomads (Passacaglia)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-22 On the Beach at Night.mp3","name":"22 On the Beach at Night","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-23 Procyon.mp3","name":"23 Procyon","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-24 Psyche.mp3","name":"24 Psyche","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-25 Stellar Formation.mp3","name":"25 Stellar Formation","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-26 Tranquility Base.mp3","name":"26 Tranquility Base","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-27 Vast, Immortal Suns.mp3","name":"27 Vast, Immortal Suns","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-28 Temple of Kluex (The Ark).mp3","name":"28 Temple of Kluex (The Ark)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-29 The Eternal Tide (Esther's Story).mp3","name":"29 The Eternal Tide (Esther's Story)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-30 Ocean Battle 1 (Erchius Mining Facility).mp3","name":"30 Ocean Battle 1 (Erchius Mining Facility)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-31 Gravitational Collapse (Main Boss Theme).mp3","name":"31 Gravitational Collapse (Main Boss Theme)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-32 Desert Exploration 2 (Tech Courses).mp3","name":"32 Desert Exploration 2 (Tech Courses)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-33 The Peacekeepers (Peacekeeper Stations).mp3","name":"33 The Peacekeepers (Peacekeeper Stations)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-34 Dead or Alive (VS. Criminal Encounters).mp3","name":"34 Dead or Alive (VS. Criminal Encounters)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-35 Housecleaning (VS. VR Encounters).mp3","name":"35 Housecleaning (VS. VR Encounters)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-36 Lava Exploration 2 (Ceremonial Hunting Caverns).mp3","name":"36 Lava Exploration 2 (Ceremonial Hunting Caverns)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-37 Arctic Exploration 1.mp3","name":"37 Arctic Exploration 1","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-38 Arctic Exploration 2.mp3","name":"38 Arctic Exploration 2","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-39 I Was the Sun (Before It Was Cool) (The Arena).mp3","name":"39 I Was the Sun (Before It Was Cool) (The Arena)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-40 Event Horizon (VS. Arena Boss 2).mp3","name":"40 Event Horizon (VS. Arena Boss 2)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-41 Impact Event (VS. Arena Boss 3).mp3","name":"41 Impact Event (VS. Arena Boss 3)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-42 Arctic Battle 2 (VS. Dreadwing the Penguin).mp3","name":"42 Arctic Battle 2 (VS. Dreadwing the Penguin)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-43 The Deep (Grand Pagoda Library).mp3","name":"43 The Deep (Grand Pagoda Library)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-44 Arctic Battle 3 (VS. Asra Nox).mp3","name":"44 Arctic Battle 3 (VS. Asra Nox)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-45 Body Electric.mp3","name":"45 Body Electric","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-46 Crystal Exploration 1.mp3","name":"46 Crystal Exploration 1","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-47 Crystal Exploration 2.mp3","name":"47 Crystal Exploration 2","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-48 Desert Exploration 1.mp3","name":"48 Desert Exploration 1","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-49 Drosera.mp3","name":"49 Drosera","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-50 Forsaken Grotto.mp3","name":"50 Forsaken Grotto","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-51 Inviolate.mp3","name":"51 Inviolate","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-52 Lava Exploration 1.mp3","name":"52 Lava Exploration 1","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-53 Ultramarine.mp3","name":"53 Ultramarine","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-54 Casiopeia (Great Sovereign Temple).mp3","name":"54 Casiopeia (Great Sovereign Temple)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-55 Error 0xbfaf000.mp3","name":"55 Error 0xbfaf000","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/2-13 Tentacle Exploration 1 (Unused).mp3","name":"13 Tentacle Exploration 1 (Unused)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-57 The Ruin (Forest Battle 2b) (VS. Heart of Ruin).mp3","name":"57 The Ruin (Forest Battle 2b) (VS. Heart of Ruin)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-58 Stellar Acclimation (Credits).mp3","name":"58 Stellar Acclimation (Credits)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-59 The Apex (Ice Vaults).mp3","name":"59 The Apex (Ice Vaults)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/1-60 Swansong (VS. Swansong).mp3","name":"60 Swansong (VS. Swansong)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/2-01 Desert Battle 2 (Unused).mp3","name":"01 Desert Battle 2 (Unused)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/2-02 Forest Battle 1 (Unused).mp3","name":"02 Forest Battle 1 (Unused)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/2-03 Forest Battle 2 (Unused).mp3","name":"03 Forest Battle 2 (Unused)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/2-04 Forest Exploration 1 (Unused).mp3","name":"04 Forest Exploration 1 (Unused)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/2-05 Forest Exploration 2 (Unused).mp3","name":"05 Forest Exploration 2 (Unused)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/2-06 Forest (Unused).mp3","name":"06 Forest (Unused)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/2-07 Glacial Horizon (Unused).mp3","name":"07 Glacial Horizon (Unused)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/2-08 Home Concept (Unused).mp3","name":"08 Home Concept (Unused)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/2-09 Ocean Exploration 1 (Unused).mp3","name":"09 Ocean Exploration 1 (Unused)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/2-10 Ocean Exploration 2 (Unused).mp3","name":"10 Ocean Exploration 2 (Unused)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/2-11 Scorian Flow (Unused).mp3","name":"11 Scorian Flow (Unused)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/2-12 Tentacle Battle 1 (Unused).mp3","name":"12 Tentacle Battle 1 (Unused)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/2-13 Tentacle Exploration 1 (Unused).mp3","name":"13 Tentacle Exploration 1 (Unused)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/2-14 Tentacle Exploration 2 (Unused).mp3","name":"14 Tentacle Exploration 2 (Unused)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/2-15 Unfinished Track (Unused).mp3","name":"15 Unfinished Track (Unused)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/2-16 Via Aurora (Unused).mp3","name":"16 Via Aurora (Unused)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/2-17 Dancebound (Bonus Track).mp3","name":"17 Dancebound (Bonus Track)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/2-18 Title Theme Concept (Bonus Track).mp3","name":"18 Title Theme Concept (Bonus Track)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/2-19 Jupiter (Remix).mp3","name":"19 Jupiter (Remix)","artist":"Curtis Schweitzer"},{"path":"/api/Starbound/2-20 Weep not, my child.mp3","name":"20 Weep not, my child","artist":"Curtis Schweitzer"}];
+        const COVER_IMAGE = "/images/Starbound/Starbound.webp";
     </script>
-    <script src="../play.js"></script>
+    <script src="/api/play.js"></script>
 </body>
 </html>

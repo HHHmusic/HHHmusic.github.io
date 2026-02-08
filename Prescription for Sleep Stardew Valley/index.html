@@ -2,58 +2,51 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="logo.png">
-    <meta name="keywords" content="静水深流, 星露谷物语原声音轨, 星露谷物语, 助眠音乐：星露谷, 在线播放, 音乐, Prescription for Sleep Stardew Valley">
-    <meta name="description" content="助眠音乐：星露谷在线播放">
-    <meta name="author" content="Ethaniel">
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        
-        gtag('config', 'G-M7CTLKY38C');
-    </script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Ethaniel">
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-M7CTLKY38C');
+</script>
+
+
+
+    <link rel="stylesheet" href="/api/play.css">
+    <link rel="icon" href="images/Prescription for Sleep Stardew Valley/logo.png">
     <title>助眠音乐：星露谷</title>
-    <link rel="stylesheet" href="../play.css">
-    <body style="background-image: url('bgImage.jpg');">
+    <meta name="keywords" content="静水深流, Frostpunk原声音轨, Frostpunk, 冰汽时代原声音轨, 冰汽时代, 在线播放, 音乐">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="静水深流 | 音乐空间">
+    <meta property="og:title" content="助眠音乐：星露谷">
     <meta property="og:description" content="助眠音乐：星露谷在线播放">
-    <meta property="og:image" content="https://music.hcyhub.com/images/助眠音乐：星露谷.webp">
+    <meta property="og:image" content="https://music.hcyhub.com/images/Prescription for Sleep Stardew Valley/助眠音乐：星露谷.webp">
+
+
+
 </head>
-<body>
+
+<body style="background-image: url('images/Prescription for Sleep Stardew Valley/bgImage.jpg');">
     <div class="player-container">
         <div class="playlist-and-info">
             <div class="playlist" id="playlistContainer">
-            </div>
+                </div>
             <div class="song-info" id="songInfo">
                 <h3>歌曲名称</h3>
                 <p>艺术家</p>
             </div>
         </div>
+        
         <audio id="audioPlayer" class="progress-bar" controls></audio>
-        <div class="controls">
-        </div>
+        
+        <div class="controls"></div>
     </div>
 
     <script>
-        const playlist = [
-            { path: '/api/Prescription for Sleep Stardew Valley/1.星露谷序曲.mp3', name: '星露谷物语序曲', artist: 'GENTLE LOVE' },
-            { path: '/api/Prescription for Sleep Stardew Valley/2.春天（山谷复苏） .mp3', name: '2.春天（山谷复苏）', artist: 'GENTLE LOVE' },
-            { path: '/api/Prescription for Sleep Stardew Valley/3.夏季（太阳可以弯曲橙色的天空）.mp3', name: '3.夏季（太阳可以弯曲橙色的天空）', artist: 'GENTLE LOVE' },
-            { path: '/api/Prescription for Sleep Stardew Valley/4.月光水母之舞.mp3', name: '4.月光水母之舞', artist: 'GENTLE LOVE' },
-            { path: '/api/Prescription for Sleep Stardew Valley/5.秋天（蘑菇的味道）.mp3', name: '5.秋天（蘑菇的味道）', artist: 'GENTLE LOVE' },
-            { path: '/api/Prescription for Sleep Stardew Valley/6.坠落（渡鸦降临）.mp3', name: '6.坠落（渡鸦降临）', artist: 'GENTLE LOVE' },
-            { path: '/api/Prescription for Sleep Stardew Valley/7.矿井（布）.mp3', name: '7.矿井（布）', artist: 'GENTLE LOVE' },
-            { path: '/api/Prescription for Sleep Stardew Valley/8.冬 (冰之夜曲).mp3', name: '8.冬 (冰之夜曲)', artist: 'GENTLE LOVE' },
-            { path: '/api/Prescription for Sleep Stardew Valley/9.冬日（风可静）.mp3', name: '9.冬日（风可静）', artist: 'GENTLE LOVE' },
-            { path: '/api/Prescription for Sleep Stardew Valley/10.夜市.mp3', name: '10.夜市', artist: 'GENTLE LOVE' },
-            { path: '/api/Prescription for Sleep Stardew Valley/11.一颗金星诞生.mp3', name: '11.一颗金星诞生', artist: 'GENTLE LOVE' },
-            { path: '/api/Prescription for Sleep Stardew Valley/12.四季之美（原创）.mp3', name: '12.四季之美（原创）', artist: 'GENTLE LOVE' }
-        ];
-        const COVER_IMAGE = "/images/助眠音乐：星露谷.webp"; 
+        const playlist = [{"path":"/api/Prescription for Sleep Stardew Valley/1.星露谷序曲.mp3","name":"星露谷物语序曲","artist":"GENTLE LOVE"},{"path":"/api/Prescription for Sleep Stardew Valley/2.春天（山谷复苏） .mp3","name":"2.春天（山谷复苏）","artist":"GENTLE LOVE"},{"path":"/api/Prescription for Sleep Stardew Valley/3.夏季（太阳可以弯曲橙色的天空）.mp3","name":"3.夏季（太阳可以弯曲橙色的天空）","artist":"GENTLE LOVE"},{"path":"/api/Prescription for Sleep Stardew Valley/4.月光水母之舞.mp3","name":"4.月光水母之舞","artist":"GENTLE LOVE"},{"path":"/api/Prescription for Sleep Stardew Valley/5.秋天（蘑菇的味道）.mp3","name":"5.秋天（蘑菇的味道）","artist":"GENTLE LOVE"},{"path":"/api/Prescription for Sleep Stardew Valley/6.坠落（渡鸦降临）.mp3","name":"6.坠落（渡鸦降临）","artist":"GENTLE LOVE"},{"path":"/api/Prescription for Sleep Stardew Valley/7.矿井（布）.mp3","name":"7.矿井（布）","artist":"GENTLE LOVE"},{"path":"/api/Prescription for Sleep Stardew Valley/8.冬 (冰之夜曲).mp3","name":"8.冬 (冰之夜曲)","artist":"GENTLE LOVE"},{"path":"/api/Prescription for Sleep Stardew Valley/9.冬日（风可静）.mp3","name":"9.冬日（风可静）","artist":"GENTLE LOVE"},{"path":"/api/Prescription for Sleep Stardew Valley/10.夜市.mp3","name":"10.夜市","artist":"GENTLE LOVE"},{"path":"/api/Prescription for Sleep Stardew Valley/11.一颗金星诞生.mp3","name":"11.一颗金星诞生","artist":"GENTLE LOVE"},{"path":"/api/Prescription for Sleep Stardew Valley/12.四季之美（原创）.mp3","name":"12.四季之美（原创）","artist":"GENTLE LOVE"}];
+        const COVER_IMAGE = "/images/Prescription for Sleep Stardew Valley/助眠音乐：星露谷.webp";
     </script>
-    <script src="../play.js"></script>
+    <script src="/api/play.js"></script>
 </body>
 </html>

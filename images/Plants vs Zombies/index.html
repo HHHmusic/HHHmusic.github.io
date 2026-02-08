@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Plants vs. Zombies.png">
+    <meta name="keywords" content="静水深流, 植物大战僵尸原声音轨, 植物大战僵尸, Plants vs. Zombies原声音轨, Plants vs. Zombies, Plants vs. Zombies原声音轨, 在线播放, 音乐">
+    <meta name="description" content="植物大战僵尸原声音轨在线播放">
+    <meta name="author" content="Ethaniel">
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'G-M7CTLKY38C');
+    </script>
+    <title>植物大战僵尸</title>
+    <link rel="stylesheet" href="../play.css">
+    <body style="background-image: url('bgImage.jpg');">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="静水深流 | 音乐空间">
+    <meta property="og:description" content="植物大战僵尸原声音轨在线播放">
+    <meta property="og:image" content="https://music.hcyhub.com/images/Plants vs. Zombies.webp">
+</head>
+<body>
+    <div class="player-container">
+        <div class="playlist-and-info">
+            <div class="playlist" id="playlistContainer">
+            </div>
+            <div class="song-info" id="songInfo">
+                <h3>歌曲名称</h3>
+                <p>艺术家</p>
+            </div>
+        </div>
+        <audio id="audioPlayer" class="progress-bar" controls></audio>
+        <div class="controls">
+        </div>
+    </div>
+
+    <script>
+        const playlist = [
+            { type: 'chapter', title: "背景音乐" },
+            { path: "/api/Plants vs. Zombies/01. dancer.mp3", name: "dancer", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/02. finalfanfare.mp3", name: "finalfanfare", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/03. hugewave.mp3", name: "hugewave", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/04. jackinthebox.mp3", name: "jackinthebox", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/05. losemusic.mp3", name: "losemusic", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/06. Main Music 00.mp3", name: "Main Music 00", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/07. Main Music 01.mp3", name: "Main Music 01", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/08. Main Music 02.mp3", name: "Main Music 02", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/09. Main Music 03.mp3", name: "Main Music 03", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/10. Main Music 04.mp3", name: "Main Music 04", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/11. Main Music 05.mp3", name: "Main Music 05", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/12. Main Music 06.mp3", name: "Main Music 06", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/13. Main Music 07.mp3", name: "Main Music 07", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/14. Main Music 08.mp3", name: "Main Music 08", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/15. Main Music 09.mp3", name: "Main Music 09", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/16. Main Music 10.mp3", name: "Main Music 10", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/17. Main Music 11.mp3", name: "Main Music 11", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/18. Main Music 12.mp3", name: "Main Music 12", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/19. Main Music 13.mp3", name: "Main Music 13", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/20. Main Music Hihats 0.mp3", name: "Main Music Hihats 0", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/21. Main Music Hihats 1.mp3", name: "Main Music Hihats 1", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/22. Main Music Hihats 2.mp3", name: "Main Music Hihats 2", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/23. Main Music Hihats 3.mp3", name: "Main Music Hihats 3", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/24. pause.mp3", name: "pause", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/25. phonograph.mp3", name: "phonograph", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/26. winmusic.mp3", name: "winmusic", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/27. ZombiesOnYourLawn.mp3", name: "ZombiesOnYourLawn", artist: "Laura Shigihara" },
+            { type: 'chapter', title: "音效" },
+            { path: "/api/Plants vs. Zombies/SFX RVthrow.mp3", name: "SFX RVthrow", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX achievement.mp3", name: "SFX achievement", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX balloon pop.mp3", name: "SFX balloon pop", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX ballooninflate.mp3", name: "SFX ballooninflate", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX basketball.mp3", name: "SFX basketball", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX bigchomp.mp3", name: "SFX bigchomp", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX bleep.mp3", name: "SFX bleep", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX blover.mp3", name: "SFX blover", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX boing.mp3", name: "SFX boing", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX bonk.mp3", name: "SFX bonk", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX bossboulderattack.mp3", name: "SFX bossboulderattack", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX bossexplosion.mp3", name: "SFX bossexplosion", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX bowling.mp3", name: "SFX bowling", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX bowlingimpact.mp3", name: "SFX bowlingimpact", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX bowlingimpact2.mp3", name: "SFX bowlingimpact2", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX bugspray.mp3", name: "SFX bugspray", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX butter.mp3", name: "SFX butter", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX buttonclick.mp3", name: "SFX buttonclick", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX buzzer.mp3", name: "SFX buzzer", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX ceramic.mp3", name: "SFX ceramic", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX cherrybomb.mp3", name: "SFX cherrybomb", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX chime.mp3", name: "SFX chime", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX chomp.mp3", name: "SFX chomp", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX chomp2.mp3", name: "SFX chomp2", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX chompsoft.mp3", name: "SFX chompsoft", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX coblaunch.mp3", name: "SFX coblaunch", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX coffee.mp3", name: "SFX coffee", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX coin.mp3", name: "SFX coin", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX digger zombie.mp3", name: "SFX digger zombie", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX dirt rise.mp3", name: "SFX dirt rise", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX doomshroom.mp3", name: "SFX doomshroom", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX explosion.mp3", name: "SFX explosion", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX fertilizer.mp3", name: "SFX fertilizer", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX finalwave.mp3", name: "SFX finalwave", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX firepea.mp3", name: "SFX firepea", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX floop.mp3", name: "SFX floop", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX frozen.mp3", name: "SFX frozen", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX fume.mp3", name: "SFX fume", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX gargantuar thump.mp3", name: "SFX gargantuar thump", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX grassstep.mp3", name: "SFX grassstep", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX gravebusterchomp.mp3", name: "SFX gravebusterchomp", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX gravebutton.mp3", name: "SFX gravebutton", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX gravestone rumble.mp3", name: "SFX gravestone rumble", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX hatchback close.mp3", name: "SFX hatchback close", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX hatchback open.mp3", name: "SFX hatchback open", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX hydraulic short.mp3", name: "SFX hydraulic short", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX hydraulic.mp3", name: "SFX hydraulic", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX ignite.mp3", name: "SFX ignite", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX ignite2.mp3", name: "SFX ignite2", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX jalapeno.mp3", name: "SFX jalapeno", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX juicy.mp3", name: "SFX juicy", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX kernelpult.mp3", name: "SFX kernelpult", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX kernelpult2.mp3", name: "SFX kernelpult2", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX ladder zombie.mp3", name: "SFX ladder zombie", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX lawnmower.mp3", name: "SFX lawnmower", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX lightfill.mp3", name: "SFX lightfill", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX limbs pop.mp3", name: "SFX limbs pop", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX loadingbar flower.mp3", name: "SFX loadingbar flower", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX magnetshroom.mp3", name: "SFX magnetshroom", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX melonimpact.mp3", name: "SFX melonimpact", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX melonimpact2.mp3", name: "SFX melonimpact2", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX mindcontrolled.mp3", name: "SFX mindcontrolled", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX moneyfalls.mp3", name: "SFX moneyfalls", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX newspaper rip.mp3", name: "SFX newspaper rip", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX paper.mp3", name: "SFX paper", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX plant water.mp3", name: "SFX plant water", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX plant.mp3", name: "SFX plant", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX plant2.mp3", name: "SFX plant2", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX plantern.mp3", name: "SFX plantern", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX plantgrow.mp3", name: "SFX plantgrow", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX plastichit.mp3", name: "SFX plastichit", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX plastichit2.mp3", name: "SFX plastichit2", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX pogo zombie.mp3", name: "SFX pogo zombie", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX points.mp3", name: "SFX points", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX polevault.mp3", name: "SFX polevault", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX pool cleaner.mp3", name: "SFX pool cleaner", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX portal.mp3", name: "SFX portal", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX potato mine.mp3", name: "SFX potato mine", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX prize.mp3", name: "SFX prize", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX puff.mp3", name: "SFX puff", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX rain.mp3", name: "SFX rain", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX readysetplant.mp3", name: "SFX readysetplant", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX reverse explosion.mp3", name: "SFX reverse explosion", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX roll in.mp3", name: "SFX roll in", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX seedlift.mp3", name: "SFX seedlift", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX shieldhit.mp3", name: "SFX shieldhit", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX shieldhit2.mp3", name: "SFX shieldhit2", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX shoop.mp3", name: "SFX shoop", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX shovel.mp3", name: "SFX shovel", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX siren.mp3", name: "SFX siren", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX slotmachine.mp3", name: "SFX slotmachine", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX slurp.mp3", name: "SFX slurp", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX snow pea sparkles.mp3", name: "SFX snow pea sparkles", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX splat.mp3", name: "SFX splat", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX splat2.mp3", name: "SFX splat2", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX splat3.mp3", name: "SFX splat3", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX swing.mp3", name: "SFX swing", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX tap.mp3", name: "SFX tap", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX tap2.mp3", name: "SFX tap2", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX throw.mp3", name: "SFX throw", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX throw2.mp3", name: "SFX throw2", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX thunder.mp3", name: "SFX thunder", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX vase breaking.mp3", name: "SFX vase breaking", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX wakeup.mp3", name: "SFX wakeup", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX watering.mp3", name: "SFX watering", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX zamboni.mp3", name: "SFX zamboni", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX zombie entering water.mp3", name: "SFX zombie entering water", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX zombie falling 1.mp3", name: "SFX zombie falling 1", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX zombie falling 2.mp3", name: "SFX zombie falling 2", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/SFX zombiesplash.mp3", name: "SFX zombiesplash", artist: "Laura Shigihara" },
+            { type: 'chapter', title: "角色配音" },
+            { path: "/api/Plants vs. Zombies/Voices awooga.mp3", name: "Voices awooga", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices bungee scream.mp3", name: "Voices bungee scream", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices bungee scream2.mp3", name: "Voices bungee scream2", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices bungee scream3.mp3", name: "Voices bungee scream3", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices crazydavecrazy.mp3", name: "Voices crazydavecrazy", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices crazydaveextralong1.mp3", name: "Voices crazydaveextralong1", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices crazydaveextralong2.mp3", name: "Voices crazydaveextralong2", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices crazydaveextralong3.mp3", name: "Voices crazydaveextralong3", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices crazydavelong1.mp3", name: "Voices crazydavelong1", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices crazydavelong2.mp3", name: "Voices crazydavelong2", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices crazydavelong3.mp3", name: "Voices crazydavelong3", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices crazydavescream.mp3", name: "Voices crazydavescream", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices crazydavescream2.mp3", name: "Voices crazydavescream2", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices crazydaveshort1.mp3", name: "Voices crazydaveshort1", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices crazydaveshort2.mp3", name: "Voices crazydaveshort2", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices crazydaveshort3.mp3", name: "Voices crazydaveshort3", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices dolphin appears.mp3", name: "Voices dolphin appears", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices dolphin before jumping.mp3", name: "Voices dolphin before jumping", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices evillaugh.mp3", name: "Voices evillaugh", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices gargantudeath.mp3", name: "Voices gargantudeath", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices groan.mp3", name: "Voices groan", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices groan2.mp3", name: "Voices groan2", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices groan3.mp3", name: "Voices groan3", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices groan4.mp3", name: "Voices groan4", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices groan5.mp3", name: "Voices groan5", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices groan6.mp3", name: "Voices groan6", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices gulp.mp3", name: "Voices gulp", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices imp.mp3", name: "Voices imp", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices imp2.mp3", name: "Voices imp2", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices jack surprise.mp3", name: "Voices jack surprise", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices jack surprise2.mp3", name: "Voices jack surprise2", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices loadingbar zombie.mp3", name: "Voices loadingbar zombie", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices lowgroan.mp3", name: "Voices lowgroan", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices lowgroan2.mp3", name: "Voices lowgroan2", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices newspaper rarrgh.mp3", name: "Voices newspaper rarrgh", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices newspaper rarrgh2.mp3", name: "Voices newspaper rarrgh2", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices scream.mp3", name: "Voices scream", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices squash hmm.mp3", name: "Voices squash hmm", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices squash hmm2.mp3", name: "Voices squash hmm2", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices sukhbir.mp3", name: "Voices sukhbir", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices sukhbir2.mp3", name: "Voices sukhbir2", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices sukhbir3.mp3", name: "Voices sukhbir3", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices sukhbir4.mp3", name: "Voices sukhbir4", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices sukhbir5.mp3", name: "Voices sukhbir5", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices sukhbir6.mp3", name: "Voices sukhbir6", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices yuck.mp3", name: "Voices yuck", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices yuck2.mp3", name: "Voices yuck2", artist: "Laura Shigihara" },
+            { path: "/api/Plants vs. Zombies/Voices zombaquarium die.mp3", name: "Voices zombaquarium die", artist: "Laura Shigihara" }
+        ];
+        const COVER_IMAGE = "/images/Plants vs. Zombies.webp";
+    </script>
+    <script src="../play.js"></script>
+</body>
+</html>

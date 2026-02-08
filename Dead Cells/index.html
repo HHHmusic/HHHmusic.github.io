@@ -2,127 +2,51 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="icon.ico">
-    <meta name="keywords" content="静水深流, Dead Cells原声音轨, Dead Cells, 死亡细胞原声音轨, 死亡细胞, 死亡细胞原版原声音轨, Dead Cells原版原声音轨, 在线播放, 音乐">
-    <meta name="description" content="Dead Cells原声音轨在线播放">
-    <meta name="author" content="Ethaniel">
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        
-        gtag('config', 'G-M7CTLKY38C');
-    </script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Ethaniel">
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-M7CTLKY38C');
+</script>
+
+
+
+    <link rel="stylesheet" href="/api/play.css">
+    <link rel="icon" href="images/Dead Cells/icon.ico">
     <title>Dead Cells</title>
-    <link rel="stylesheet" href="../play.css">
-    <body style="background-image: url('bgImage.jpg');">
-        <meta property="og:type" content="website">
-    <meta property="og:title" content="静水深流 | 音乐空间">
+    <meta name="keywords" content="静水深流, Frostpunk原声音轨, Frostpunk, 冰汽时代原声音轨, 冰汽时代, 在线播放, 音乐">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Dead Cells">
     <meta property="og:description" content="Dead Cells原声音轨在线播放">
     <meta property="og:image" content="https://music.hcyhub.com/images/Dead Cells.webp">
+
+
+
 </head>
-<body>
+
+<body style="background-image: url('images/Dead Cells/bgImage.jpg');">
     <div class="player-container">
         <div class="playlist-and-info">
             <div class="playlist" id="playlistContainer">
-            </div>
+                </div>
             <div class="song-info" id="songInfo">
                 <h3>歌曲名称</h3>
                 <p>艺术家</p>
             </div>
         </div>
+        
         <audio id="audioPlayer" class="progress-bar" controls></audio>
-        <div class="controls">
-        </div>
+        
+        <div class="controls"></div>
     </div>
 
     <script>
-        const playlist = [
-            { type: 'chapter', title: "死亡细胞原版" },
-            { path: '/api/Dead Cells/01 Dead Cells.mp3', name: '01 死亡细胞 Dead Cells', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/02 Prisoner_s Awakening.mp3', name: '02 被囚者牢房 Prisoner_s Awakening', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/03 Promenade Of The Condemned.mp3', name: '03 有罪者大道 Promenade Of The Condemned', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/04 The Merchant.mp3', name: '04 商人 The Merchant', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/05 Prison_s Rooftop.mp3', name: '05 壁垒 Prison_s Rooftop', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/06 Black Bridge.mp3', name: '06 黑色大桥 Black Bridge', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/07 The Village.mp3', name: '07 雾绕港湾 The Village', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/08 Toxic Sewers.mp3', name: '08 猛毒下水道 Toxic Sewers', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/09 Ossuary.mp3', name: '09 藏骨堂 Ossuary', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/10 Elite Fight.mp3', name: '10 精英战斗 Elite Fight', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/11 The Old Sewers.mp3', name: '11 旧下水道 The Old Sewers', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/12 The Cemetery.mp3', name: '12 墓地 The Cemetery', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/13 Conjonctivius.mp3', name: '13 肿胀眼魔 Conjonctivius', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/14 The Prison_s Depths.mp3', name: '14 监狱的深处 The Prison_s Depths', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/15 Prison Theme.mp3', name: '15 监狱主题 Prison Theme', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/16 The Crypt.mp3', name: '16 巢穴 The Crypt', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/17 Weapon Merchant.mp3', name: '17 武器商人 Weapon Merchant', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/18 Food Merchant.mp3', name: '18 食物商人 Food Merchant', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/19 The Temple.mp3', name: '19 沉睡的庇护所 The Temple', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/20 ClockTower.mp3', name: '20 钟楼 ClockTower', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/21 Formerly Know As Assassin.mp3', name: '21 曾被称为刺客（时光守护者） Formerly Know As Assassin', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/22 Collector.mp3', name: '22 收藏家 Collector', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/23 The Castle.mp3', name: '23 山巅城堡 The Castle', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/24 Hand Of The King.mp3', name: '24 国王之手 Hand Of The King', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/25 Credits.mp3', name: '25 制作人员名单 Credits', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/26 Cavern.mp3', name: '26 洞穴 Cavern', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/27 Guardian_s Haven.mp3', name: '27 守护者的港湾 Guardian_s Haven', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/28 Astrolab.mp3', name: '28 观星实验所 Astrolab', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/29 Observatory.mp3', name: '29 天文台 Observatory', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/30 Time For Your Medicine.mp3', name: '30 是时候吃药了 Time For Your Medicine', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/31 Corrupted Prison.mp3', name: '31 腐化的监狱 Corrupted Prison', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/32 Arboretum.mp3', name: '32 植物园 Arboretum', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/33 Swamp.mp3', name: '33 沼泽 Swamp', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/34 Heart Of The Swamp.mp3', name: '34 被弃者沼泽 Heart Of The Swamp', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/35 Distillery.mp3', name: '35 废弃酿酒厂 Distillery', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/36 Fractured Shrines.mp3', name: '36 崩坏神庙 Fractured Shrines', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/37 Undying Shores.mp3', name: '37 不死的海滩 Undying Shores', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/38 The Mausoleum.mp3', name: '38 阴森墓园 The Mausoleum', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells/39 Keep Off The Flowers.mp3', name: '39 远离鲜花（稻草人） Keep Off The Flowers', artist: 'Yoann Laulan' },
-            { type: 'chapter', title: "死亡细胞8bit原声音轨" },
-            { path: '/api/Dead Cells Chiptune/01 Dead Cells.mp3', name: '01 死亡细胞 Dead Cells', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/02 Prisoner_s Awakening.mp3', name: '02 被囚者牢房 Prisoner_s Awakening', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/03 Promenade.mp3', name: '03 有罪者大道 Promenade Of The Condemned', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/04 The Merchant.mp3', name: '04 商人 The Merchant', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/05 Ramparts.mp3', name: '05 壁垒 Ramparts', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/06 Black Bridge.mp3', name: '06 黑色大桥 Black Bridge', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/07 Stilt Village.mp3', name: '07 雾绕港湾 Stilt Village', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/08 Toxic Sewers.mp3', name: '08 猛毒下水道 Toxic Sewers', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/09 Ossuary.mp3', name: '09 藏骨堂 Ossuary', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/10 Elite Fight.mp3', name: '10 精英战斗 Elite Fight', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/11 Old Sewers.mp3', name: '11 旧下水道 Old Sewers', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/12 Cemetery.mp3', name: '12 墓地 Cemetery', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/13 Conjonctivius.mp3', name: '13 肿胀眼魔 Conjonctivius', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/14 Prison_s Depths.mp3', name: '14 监狱的深处 Prison_s Depths', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/15 Unused Prison Theme.mp3', name: '15 未使用的监狱主题 Unused Prison Theme', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/16 Sepulcher.mp3', name: '16 被遗忘的陵墓 Sepulcher', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/17 Weapon Shop.mp3', name: '17 武器商店 Weapon Shop', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/18 Food Shop.mp3', name: '18 食物商店 Food Shop', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/19 Sanctuary.mp3', name: '19 圣域 Sanctuary', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/20 ClockTower.mp3', name: '20 钟楼 ClockTower', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/21 The Time Keeper Formerly Known As Assassin.mp3', name: '21 曾被称为刺客（时光守护者） The Time Keeper Formerly Known As Assassin', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/22 Collector_s Theme.mp3', name: '22 收藏家主题 Collector_s Theme', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/23 Highpeak Castle.mp3', name: '23 山巅城堡 Highpeak Castle', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/24 Hand Of The King.mp3', name: '24 国王之手 Hand Of The King', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/25 Credits.mp3', name: '25 制作人员名单 Credits', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/26 Cavern.mp3', name: '26 洞穴 Cavern', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/27 Guardian_s Haven.mp3', name: '27 守护者的港湾 Guardian_s Haven', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/28 Astrolab.mp3', name: '28 观星实验所 Astrolab', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/29 Observatory.mp3', name: '29 天文台 Observatory', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/30 Time For Your Medicine.mp3', name: '30 是时候吃药了 Time For Your Medicine', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/31 Corrupted Prison.mp3', name: '31 腐化的监狱 Corrupted Prison', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/32 Arboretum.mp3', name: '32 植物园 Arboretum', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/33 The Swamps.mp3', name: '33 沼泽 The Swamps', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/34 The Nest.mp3', name: '34 巢穴 The Nest', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/35 Distillery.mp3', name: '35 酒厂 Distillery', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/36 (Not) Pan Master Slash.mp3', name: '36 死亡细胞官方宣传曲 (Not) Pan Master Slash', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/37 Fractured Shrines.mp3', name: '37 破碎的圣坛 Fractured Shrines', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/38 Undying Shores.mp3', name: '38 不死的海岸 Undying Shores', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/39 Mausoleum.mp3', name: '39 阴森墓园 Mausoleum', artist: 'Yoann Laulan' },
-            { path: '/api/Dead Cells Chiptune/40 Keep Off The Flowers.mp3', name: '40 远离鲜花（稻草人） Keep Off The Flowers', artist: 'Yoann Laulan' }
-        ];
-        const COVER_IMAGE = "/images/Dead Cells.webp"; 
+        const playlist = [{"type":"chapter","title":"死亡细胞原版"},{"path":"/api/Dead Cells/01 Dead Cells.mp3","name":"01 死亡细胞 Dead Cells","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/02 Prisoner_s Awakening.mp3","name":"02 被囚者牢房 Prisoner_s Awakening","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/03 Promenade Of The Condemned.mp3","name":"03 有罪者大道 Promenade Of The Condemned","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/04 The Merchant.mp3","name":"04 商人 The Merchant","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/05 Prison_s Rooftop.mp3","name":"05 壁垒 Prison_s Rooftop","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/06 Black Bridge.mp3","name":"06 黑色大桥 Black Bridge","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/07 The Village.mp3","name":"07 雾绕港湾 The Village","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/08 Toxic Sewers.mp3","name":"08 猛毒下水道 Toxic Sewers","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/09 Ossuary.mp3","name":"09 藏骨堂 Ossuary","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/10 Elite Fight.mp3","name":"10 精英战斗 Elite Fight","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/11 The Old Sewers.mp3","name":"11 旧下水道 The Old Sewers","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/12 The Cemetery.mp3","name":"12 墓地 The Cemetery","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/13 Conjonctivius.mp3","name":"13 肿胀眼魔 Conjonctivius","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/14 The Prison_s Depths.mp3","name":"14 监狱的深处 The Prison_s Depths","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/15 Prison Theme.mp3","name":"15 监狱主题 Prison Theme","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/16 The Crypt.mp3","name":"16 巢穴 The Crypt","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/17 Weapon Merchant.mp3","name":"17 武器商人 Weapon Merchant","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/18 Food Merchant.mp3","name":"18 食物商人 Food Merchant","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/19 The Temple.mp3","name":"19 沉睡的庇护所 The Temple","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/20 ClockTower.mp3","name":"20 钟楼 ClockTower","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/21 Formerly Know As Assassin.mp3","name":"21 曾被称为刺客（时光守护者） Formerly Know As Assassin","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/22 Collector.mp3","name":"22 收藏家 Collector","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/23 The Castle.mp3","name":"23 山巅城堡 The Castle","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/24 Hand Of The King.mp3","name":"24 国王之手 Hand Of The King","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/25 Credits.mp3","name":"25 制作人员名单 Credits","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/26 Cavern.mp3","name":"26 洞穴 Cavern","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/27 Guardian_s Haven.mp3","name":"27 守护者的港湾 Guardian_s Haven","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/28 Astrolab.mp3","name":"28 观星实验所 Astrolab","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/29 Observatory.mp3","name":"29 天文台 Observatory","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/30 Time For Your Medicine.mp3","name":"30 是时候吃药了 Time For Your Medicine","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/31 Corrupted Prison.mp3","name":"31 腐化的监狱 Corrupted Prison","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/32 Arboretum.mp3","name":"32 植物园 Arboretum","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/33 Swamp.mp3","name":"33 沼泽 Swamp","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/34 Heart Of The Swamp.mp3","name":"34 被弃者沼泽 Heart Of The Swamp","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/35 Distillery.mp3","name":"35 废弃酿酒厂 Distillery","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/36 Fractured Shrines.mp3","name":"36 崩坏神庙 Fractured Shrines","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/37 Undying Shores.mp3","name":"37 不死的海滩 Undying Shores","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/38 The Mausoleum.mp3","name":"38 阴森墓园 The Mausoleum","artist":"Yoann Laulan"},{"path":"/api/Dead Cells/39 Keep Off The Flowers.mp3","name":"39 远离鲜花（稻草人） Keep Off The Flowers","artist":"Yoann Laulan"},{"type":"chapter","title":"死亡细胞8bit原声音轨"},{"path":"/api/Dead Cells Chiptune/01 Dead Cells.mp3","name":"01 死亡细胞 Dead Cells","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/02 Prisoner_s Awakening.mp3","name":"02 被囚者牢房 Prisoner_s Awakening","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/03 Promenade.mp3","name":"03 有罪者大道 Promenade Of The Condemned","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/04 The Merchant.mp3","name":"04 商人 The Merchant","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/05 Ramparts.mp3","name":"05 壁垒 Ramparts","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/06 Black Bridge.mp3","name":"06 黑色大桥 Black Bridge","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/07 Stilt Village.mp3","name":"07 雾绕港湾 Stilt Village","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/08 Toxic Sewers.mp3","name":"08 猛毒下水道 Toxic Sewers","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/09 Ossuary.mp3","name":"09 藏骨堂 Ossuary","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/10 Elite Fight.mp3","name":"10 精英战斗 Elite Fight","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/11 Old Sewers.mp3","name":"11 旧下水道 Old Sewers","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/12 Cemetery.mp3","name":"12 墓地 Cemetery","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/13 Conjonctivius.mp3","name":"13 肿胀眼魔 Conjonctivius","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/14 Prison_s Depths.mp3","name":"14 监狱的深处 Prison_s Depths","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/15 Unused Prison Theme.mp3","name":"15 未使用的监狱主题 Unused Prison Theme","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/16 Sepulcher.mp3","name":"16 被遗忘的陵墓 Sepulcher","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/17 Weapon Shop.mp3","name":"17 武器商店 Weapon Shop","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/18 Food Shop.mp3","name":"18 食物商店 Food Shop","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/19 Sanctuary.mp3","name":"19 圣域 Sanctuary","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/20 ClockTower.mp3","name":"20 钟楼 ClockTower","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/21 The Time Keeper Formerly Known As Assassin.mp3","name":"21 曾被称为刺客（时光守护者） The Time Keeper Formerly Known As Assassin","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/22 Collector_s Theme.mp3","name":"22 收藏家主题 Collector_s Theme","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/23 Highpeak Castle.mp3","name":"23 山巅城堡 Highpeak Castle","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/24 Hand Of The King.mp3","name":"24 国王之手 Hand Of The King","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/25 Credits.mp3","name":"25 制作人员名单 Credits","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/26 Cavern.mp3","name":"26 洞穴 Cavern","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/27 Guardian_s Haven.mp3","name":"27 守护者的港湾 Guardian_s Haven","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/28 Astrolab.mp3","name":"28 观星实验所 Astrolab","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/29 Observatory.mp3","name":"29 天文台 Observatory","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/30 Time For Your Medicine.mp3","name":"30 是时候吃药了 Time For Your Medicine","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/31 Corrupted Prison.mp3","name":"31 腐化的监狱 Corrupted Prison","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/32 Arboretum.mp3","name":"32 植物园 Arboretum","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/33 The Swamps.mp3","name":"33 沼泽 The Swamps","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/34 The Nest.mp3","name":"34 巢穴 The Nest","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/35 Distillery.mp3","name":"35 酒厂 Distillery","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/36 (Not) Pan Master Slash.mp3","name":"36 死亡细胞官方宣传曲 (Not) Pan Master Slash","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/37 Fractured Shrines.mp3","name":"37 破碎的圣坛 Fractured Shrines","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/38 Undying Shores.mp3","name":"38 不死的海岸 Undying Shores","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/39 Mausoleum.mp3","name":"39 阴森墓园 Mausoleum","artist":"Yoann Laulan"},{"path":"/api/Dead Cells Chiptune/40 Keep Off The Flowers.mp3","name":"40 远离鲜花（稻草人） Keep Off The Flowers","artist":"Yoann Laulan"}];
+        const COVER_IMAGE = "/images/Dead Cells/Dead Cells.webp";
     </script>
-    <script src="../play.js"></script>
+    <script src="/api/play.js"></script>
 </body>
 </html>

@@ -2,62 +2,51 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="favicon.ico">
-    <meta name="keywords" content="静水深流, 红色警戒2原声音轨, 红色警戒2, Red Alert 2原声音轨, Red Alert 2, Red Alert 2原声音轨, 在线播放, 音乐">
-    <meta name="description" content="红色警戒2原声音轨在线播放">
-    <meta name="author" content="Ethaniel">
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        
-        gtag('config', 'G-M7CTLKY38C');
-    </script>
-    <title>红色警戒2</title>
-    <link rel="stylesheet" href="../play.css">
-    <body style="background-image: url('bgImage.jpg');">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Ethaniel">
+
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-M7CTLKY38C');
+</script>
+
+
+
+    <link rel="stylesheet" href="/api/play.css">
+    <link rel="icon" href="images/Red Alert 2/logo.jpg">
+    <title>Neon Beats</title>
+    <meta name="keywords" content="静水深流, Frostpunk原声音轨, Frostpunk, 冰汽时代原声音轨, 冰汽时代, 在线播放, 音乐">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="静水深流 | 音乐空间">
+    <meta property="og:title" content="Neon Beats">
     <meta property="og:description" content="红色警戒2原声音轨在线播放">
-    <meta property="og:image" content="https://music.hcyhub.com/images/Red Alert 2.jpg">
+    <meta property="og:image" content="https://music.hcyhub.com/images/Red Alert 2.webp">
+
+
+
 </head>
-<body>
+
+<body style="background-image: url('images/Red Alert 2/bgImage.jpg');">
     <div class="player-container">
         <div class="playlist-and-info">
             <div class="playlist" id="playlistContainer">
-            </div>
+                </div>
             <div class="song-info" id="songInfo">
                 <h3>歌曲名称</h3>
                 <p>艺术家</p>
             </div>
         </div>
+        
         <audio id="audioPlayer" class="progress-bar" controls></audio>
-        <div class="controls">
-        </div>
+        
+        <div class="controls"></div>
     </div>
 
     <script>
-        const playlist = [
-            { path: "/api/Red Alert 2/200meter.mp3", name: "200meter", artist: "Frank Klepacki" },
-            { path: "/api/Red Alert 2/blowitup.mp3", name: "blowitup", artist: "Frank Klepacki" },
-            { path: "/api/Red Alert 2/burn.mp3", name: "burn", artist: "Frank Klepacki" },
-            { path: "/api/Red Alert 2/destroy.mp3", name: "destroy", artist: "Frank Klepacki" },
-            { path: "/api/Red Alert 2/eaglehun.mp3", name: "eaglehun", artist: "Frank Klepacki" },
-            { path: "/api/Red Alert 2/fortific.mp3", name: "fortific", artist: "Frank Klepacki" },
-            { path: "/api/Red Alert 2/grinder.mp3", name: "grinder", artist: "Frank Klepacki" },
-            { path: "/api/Red Alert 2/hm2.mp3", name: "hm2", artist: "Frank Klepacki" },
-            { path: "/api/Red Alert 2/indeep.mp3", name: "indeep", artist: "Frank Klepacki" },
-            { path: "/api/Red Alert 2/industro.mp3", name: "industro", artist: "Frank Klepacki" },
-            { path: "/api/Red Alert 2/jank.mp3", name: "jank", artist: "Frank Klepacki" },
-            { path: "/api/Red Alert 2/motorize.mp3", name: "motorize", artist: "Frank Klepacki" },
-            { path: "/api/Red Alert 2/power.mp3", name: "power", artist: "Frank Klepacki" },
-            { path: "/api/Red Alert 2/ra2-opt.mp3", name: "ra2-opt", artist: "Frank Klepacki" },
-            { path: "/api/Red Alert 2/ra2-sco.mp3", name: "ra2-sco", artist: "Frank Klepacki" },
-            { path: "/api/Red Alert 2/tension.mp3", name: "tension", artist: "Frank Klepacki" }
-        ];
-        const COVER_IMAGE = "/images/Red Alert 2.jpg";
+        const playlist = [{"path":"/api/Red Alert 2/200meter.mp3","name":"200meter","artist":"Frank Klepacki"},{"path":"/api/Red Alert 2/blowitup.mp3","name":"blowitup","artist":"Frank Klepacki"},{"path":"/api/Red Alert 2/burn.mp3","name":"burn","artist":"Frank Klepacki"},{"path":"/api/Red Alert 2/destroy.mp3","name":"destroy","artist":"Frank Klepacki"},{"path":"/api/Red Alert 2/eaglehun.mp3","name":"eaglehun","artist":"Frank Klepacki"},{"path":"/api/Red Alert 2/fortific.mp3","name":"fortific","artist":"Frank Klepacki"},{"path":"/api/Red Alert 2/grinder.mp3","name":"grinder","artist":"Frank Klepacki"},{"path":"/api/Red Alert 2/hm2.mp3","name":"hm2","artist":"Frank Klepacki"},{"path":"/api/Red Alert 2/indeep.mp3","name":"indeep","artist":"Frank Klepacki"},{"path":"/api/Red Alert 2/industro.mp3","name":"industro","artist":"Frank Klepacki"},{"path":"/api/Red Alert 2/jank.mp3","name":"jank","artist":"Frank Klepacki"},{"path":"/api/Red Alert 2/motorize.mp3","name":"motorize","artist":"Frank Klepacki"},{"path":"/api/Red Alert 2/power.mp3","name":"power","artist":"Frank Klepacki"},{"path":"/api/Red Alert 2/ra2-opt.mp3","name":"ra2-opt","artist":"Frank Klepacki"},{"path":"/api/Red Alert 2/ra2-sco.mp3","name":"ra2-sco","artist":"Frank Klepacki"},{"path":"/api/Red Alert 2/tension.mp3","name":"tension","artist":"Frank Klepacki"}];
+        const COVER_IMAGE = "/images/Red Alert 2/Red Alert 2.webp";
     </script>
-    <script src="../play.js"></script>
+    <script src="/api/play.js"></script>
 </body>
 </html>

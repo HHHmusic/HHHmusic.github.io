@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.png">
+    <meta name="keywords" content="静水深流, Frostpunk原声音轨, Frostpunk, 冰汽时代原声音轨, 冰汽时代, 在线播放, 音乐">
+    <meta name="description" content="冰汽时代原声音轨在线播放">
+    <meta name="author" content="Ethaniel">
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'G-M7CTLKY38C');
+    </script>
+    <title>冰汽时代</title>
+    <link rel="stylesheet" href="../play.css">
+    <body style="background-image: url('bgImage.jpg');">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="静水深流 | 音乐空间">
+    <meta property="og:description" content="冰汽时代原声音轨在线播放">
+    <meta property="og:image" content="https://music.hcyhub.com/images/Frostpunk.webp">
+</head>
+<body>
+    <div class="player-container">
+        <div class="playlist-and-info">
+            <div class="playlist" id="playlistContainer">
+            </div>
+            <div class="song-info" id="songInfo">
+                <h3>歌曲名称</h3>
+                <p>艺术家</p>
+            </div>
+        </div>
+        <audio id="audioPlayer" class="progress-bar" controls></audio>
+        <div class="controls">
+        </div>
+    </div>
+
+    <script>
+        const playlist = [
+            { type: 'chapter', title: '冰汽时代'},
+            { path: '/api/Frostpunk/Frostpunk/Piotr Musiał - Frostpunk (Original Soundtrack) - 01 - Frostpunk Theme.mp3', name: ' 01 - Frostpunk Theme', artist: 'Piotr Musiał' },
+            { path: '/api/Frostpunk/Frostpunk/Piotr Musiał - Frostpunk (Original Soundtrack) - 02 - Are We Alone.mp3', name: ' 02 - Are We Alone', artist: 'Piotr Musiał' },
+            { path: '/api/Frostpunk/Frostpunk/Piotr Musiał - Frostpunk (Original Soundtrack) - 03 - The Darkest Of Days.mp3', name: ' 03 - The Darkest Of Days', artist: 'Piotr Musiał' },
+            { path: '/api/Frostpunk/Frostpunk/Piotr Musiał - Frostpunk (Original Soundtrack) - 04 - Streets Of New London.mp3', name: ' 04 - Streets Of New London', artist: 'Piotr Musiał' },
+            { path: '/api/Frostpunk/Frostpunk/Piotr Musiał - Frostpunk (Original Soundtrack) - 05 - Brave New World.mp3', name: ' 05 - Brave New World', artist: 'Piotr Musiał' },
+            { path: '/api/Frostpunk/Frostpunk/Piotr Musiał - Frostpunk (Original Soundtrack) - 06 - The Last Flame.mp3', name: ' 06 - The Last Flame', artist: 'Piotr Musiał' },
+            { path: '/api/Frostpunk/Frostpunk/Piotr Musiał - Frostpunk (Original Soundtrack) - 07 - The Shepherd.mp3', name: ' 07 - The Shepherd', artist: 'Piotr Musiał' },
+            { path: '/api/Frostpunk/Frostpunk/Piotr Musiał - Frostpunk (Original Soundtrack) - 08 - Into The Storm.mp3', name: ' 08 - Into The Storm', artist: 'Piotr Musiał' },
+            { path: '/api/Frostpunk/Frostpunk/Piotr Musiał - Frostpunk (Original Soundtrack) - 09 - The City Must Survive.mp3', name: ' 09 - The City Must Survive', artist: 'Piotr Musiał' },
+            { path: '/api/Frostpunk/Frostpunk/Piotr Musiał - Frostpunk (Original Soundtrack) - 10 - Damned Souls.mp3', name: ' 10 - Damned Souls', artist: 'Piotr Musiał' },
+            { path: '/api/Frostpunk/Frostpunk/Piotr Musiał - Frostpunk (Original Soundtrack) - 11 - The Still, Cold World (Bonus Track).mp3', name: ' 11 - The Still, Cold World (Bonus Track)', artist: 'Piotr Musiał' },
+            { type: 'chapter', title: '冰汽时代DLC扩展'},
+            { path: '/api/Frostpunk/Frostpunk Expansions/Piotr Musiał - Frostpunk Expansions (Original Soundtrack) - 01 - The Last Autumn Theme.mp3', name: ' 01 - The Last Autumn Theme', artist: 'Piotr Musiał' },
+            { path: '/api/Frostpunk/Frostpunk Expansions/Piotr Musiał - Frostpunk Expansions (Original Soundtrack) - 02 - Arrival.mp3', name: ' 02 - Arrival', artist: 'Piotr Musiał' },
+            { path: '/api/Frostpunk/Frostpunk Expansions/Piotr Musiał - Frostpunk Expansions (Original Soundtrack) - 03 - Long Days, Cold Nights.mp3', name: ' 03 - Long Days, Cold Nights', artist: 'Piotr Musiał' },
+            { path: '/api/Frostpunk/Frostpunk Expansions/Piotr Musiał - Frostpunk Expansions (Original Soundtrack) - 04 - Construction Site.mp3', name: ' 04 - Construction Site', artist: 'Piotr Musiał' },
+            { path: '/api/Frostpunk/Frostpunk Expansions/Piotr Musiał - Frostpunk Expansions (Original Soundtrack) - 05 - Price of Progress.mp3', name: ' 05 - Price of Progress', artist: 'Piotr Musiał' },
+            { path: '/api/Frostpunk/Frostpunk Expansions/Piotr Musiał - Frostpunk Expansions (Original Soundtrack) - 06 - The Inevitable.mp3', name: ' 06 - The Inevitable', artist: 'Piotr Musiał' },
+            { path: '/api/Frostpunk/Frostpunk Expansions/Piotr Musiał - Frostpunk Expansions (Original Soundtrack) - 07 - On the Edge Theme.mp3', name: ' 07 - On the Edge Theme', artist: 'Piotr Musiał' },
+            { path: '/api/Frostpunk/Frostpunk Expansions/Piotr Musiał - Frostpunk Expansions (Original Soundtrack) - 08 - Cold, New Dawn.mp3', name: ' 08 - Cold, New Dawn', artist: 'Piotr Musiał' },
+            { path: '/api/Frostpunk/Frostpunk Expansions/Piotr Musiał - Frostpunk Expansions (Original Soundtrack) - 09 - First Shipment.mp3', name: ' 09 - First Shipment', artist: 'Piotr Musiał' },
+            { path: '/api/Frostpunk/Frostpunk Expansions/Piotr Musiał - Frostpunk Expansions (Original Soundtrack) - 10 - On our Own.mp3', name: ' 10 - On our Own', artist: 'Piotr Musiał' },
+            { path: '/api/Frostpunk/Frostpunk Expansions/Piotr Musiał - Frostpunk Expansions (Original Soundtrack) - 11 - New London Ultimatum.mp3', name: ' 11 - New London Ultimatum', artist: 'Piotr Musiał' },
+            { path: '/api/Frostpunk/Frostpunk Expansions/Piotr Musiał - Frostpunk Expansions (Original Soundtrack) - 12 - Final Push.mp3', name: ' 12 - Final Push', artist: 'Piotr Musiał' },
+            { path: '/api/Frostpunk/Frostpunk Expansions/Piotr Musiał - Frostpunk Expansions (Original Soundtrack) - 13 - Reaching the Shores (Bonus Track).mp3', name: ' 13 - Reaching the Shores (Bonus Track)', artist: 'Piotr Musiał' },
+            { path: '/api/Frostpunk/Frostpunk Expansions/Piotr Musiał - Frostpunk Expansions (Original Soundtrack) - 14 - Snow is Ever-changing (Bonus Track).mp3', name: ' 14 - Snow is Ever-changing (Bonus Track)', artist: 'Piotr Musiał' },
+            { type: 'chapter', title: '「爱皮」数字版音乐专辑——《冰汽时代》版'},
+            { path: '/api/Frostpunk/Circles EP Frostpunk Edition/01 - Frostpunk - Theme (cover by Ed Critchley).mp3', name: ' 01 Theme (cover by Ed Critchley)', artist: 'Frostpunk' },
+            { path: '/api/Frostpunk/Circles EP Frostpunk Edition/02 - Frostpunk - The City Must Survive (cover by Ed Critchley).mp3', name: ' 02 The City Must Survive (cover by Ed Critchley)', artist: 'Frostpunk' },
+            { path: '/api/Frostpunk/Circles EP Frostpunk Edition/03 - South of the Circle - Cafe (cover by Piotr Musiał).mp3', name: ' 03 Cafe (cover by Piotr Musiał)', artist: 'South of the Circle' },
+            { path: '/api/Frostpunk/Circles EP Frostpunk Edition/04 - South of the Circle - Start (cover by Piotr Musiał).mp3', name: ' 04 Start (cover by Piotr Musiał)', artist: 'Piotr Musiał & Ed Critchley' }
+        ];
+        const COVER_IMAGE = "/images/Frostpunk.webp"; 
+    </script>
+    <script src="../play.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.png">
+    <meta name="keywords" content="静水深流, 星露谷物语原声音轨, 星露谷物语, 在线播放, 音乐">
+    <meta name="description" content="星露谷物语原声音轨在线播放">
+    <meta name="author" content="Ethaniel">
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        
+        gtag('config', 'G-M7CTLKY38C');
+    </script>
+    <title>星露谷物语原声音轨</title>
+    <link rel="stylesheet" href="../play.css">
+    <body style="background-image: url('bgImage.jpg');">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="静水深流 | 音乐空间">
+    <meta property="og:description" content="星露谷物语原声音轨在线播放">
+    <meta property="og:image" content="https://music.hcyhub.com/images/星露谷物语.webp">
+</head>
+<body>
+    <div class="player-container">
+        <div class="playlist-and-info">
+            <div class="playlist" id="playlistContainer">
+            </div>
+            <div class="song-info" id="songInfo">
+                <h3>歌曲名称</h3>
+                <p>艺术家</p>
+            </div>
+        </div>
+        <audio id="audioPlayer" class="progress-bar" controls></audio>
+        <div class="controls">
+        </div>
+    </div>
+
+    <script>
+        const playlist = [
+            { path: '/api/Stardew Valley Soundtrack/01 - Stardew Valley Overture.mp3', name: '星露谷物语序曲', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/02 - Cloud Country.mp3', name: '云之国', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/03 - Grandpa\'s Theme.mp3', name: '祖父的主题', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/04 - Settling In.mp3', name: '定居下来', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/05 - Spring (It\'s A Big World Outside).mp3', name: '春天（外面的世界很大）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/06 - Spring (The Valley Comes Alive).mp3', name: '春天（山谷苏醒）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/07 - Spring (Wild Horseradish Jam).mp3', name: '春天（野生胡萝卜酱）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/08 - Pelican Town.mp3', name: '鹈鹕镇', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/09 - Flower Dance.mp3', name: '花舞节', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/10 - Fun Festival.mp3', name: '欢乐节日', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/11 - Distant Banjo.mp3', name: '远方的班卓琴', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/12 - A Glimpse Of The Other World (Wizard\'s Theme).mp3', name: '另一世界的一瞥（巫师的主题）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/13 - Summer (Nature\'s Crescendo).mp3', name: '夏天（大自然的交响曲）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/14 - Summer (The Sun Can Bend An Orange Sky).mp3', name: '夏天（太阳能弯曲橙色的天空）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/15 - Summer (Tropicala).mp3', name: '夏天（热带风情）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/16 - The Adventure Guild.mp3', name: '冒险公会', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/17 - The Stardrop Saloon.mp3', name: '星露谷酒吧', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/18 - Luau Festival.mp3', name: '夏威夷宴会', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/19 - Dance Of The Moonlight Jellies.mp3', name: '月光水母舞蹈', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/20 - Fall (The Smell Of Mushroom).mp3', name: '秋天（蘑菇的气息）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/21 - Fall (Ghost Synth).mp3', name: '秋天（鬼魂合成音）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/22 - Fall (Raven\'s Descent).mp3', name: '秋天（渡鸦的降临）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/23 - The Library and Museum.mp3', name: '图书馆与博物馆', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/24 - Stardew Valley Fair Theme.mp3', name: '星露谷展会主题', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/25 - Festival Game.mp3', name: '节日游戏', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/26 - Spirit\'s Eve Festival.mp3', name: '精灵节庆', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/27 - Winter (Nocturne Of Ice).mp3', name: '冬天（冰雪夜曲）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/28 - Winter (The Wind Can Be Still).mp3', name: '冬天（风可安静）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/29 - Winter (Ancient).mp3', name: '冬天（古老的记忆）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/30 - Winter Festival.mp3', name: '冬季节庆', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/31 - A Golden Star Is Born.mp3', name: '一颗金星诞生', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/32 - Country Shop.mp3', name: '乡村商店', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/33 - Calico Desert.mp3', name: '卡利科沙漠', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/34 - Playful.mp3', name: '顽皮', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/35 - Buttercup Melody.mp3', name: '奶油花旋律', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/36 - Pleasant Memory (Penny\'s Theme).mp3', name: '快乐的记忆（佩妮的主题）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/37 - Piano Solo (Elliott\'s Theme).mp3', name: '钢琴独奏（艾略特的主题）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/38 - Land Of Green And Gold (Leah\'s Theme).mp3', name: '绿金之地（莉亚的主题）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/39 - A Stillness In The Rain (Abigail\'s Melody).mp3', name: '雨中的宁静（阿比盖尔的旋律）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/40 - Starwatcher (Maru\'s Theme).mp3', name: '星辰观望者（玛鲁的主题）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/41 - A Sad Story (Alex\'s Theme).mp3', name: '一段悲伤的故事（亚历克斯的主题）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/42 - Pickle Jar Rag (Haley\'s Theme).mp3', name: '酸黄瓜瓶拉格（哈利的主题）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/43 - Echos (Sebastian\'s Theme).mp3', name: '回响（塞巴斯蒂安的主题）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/44 - Grapefruit Sky (Dr. Harvey\'s Theme).mp3', name: '葡萄柚的天空（哈维医生的主题）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/45 - Alex\'s Keepsake.mp3', name: '亚历克斯的纪念品', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/46 - Band Practice.mp3', name: '乐队排练', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/47 - Sam\'s Band (Electronic).mp3', name: '山姆的乐队（电子风格）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/48 - Sam\'s Band (Pop).mp3', name: '山姆的乐队（流行风格）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/49 - Sam\'s Band (Bluegrass).mp3', name: '山姆的乐队（乡镇风格）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/50 - Sam\'s Band (Heavy).mp3', name: '山姆的乐队（重金属风格）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/51 - A Dark Corner Of The Past.mp3', name: '过去的黑暗角落', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/52 - Music Box Song.mp3', name: '音乐盒之歌', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/53 - Jaunty.mp3', name: '欢快', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/54 - Violin Solo.mp3', name: '小提琴独奏', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/55 - Wedding Celebration.mp3', name: '婚礼庆典', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/56 - Mines (Crystal Bells).mp3', name: '矿洞（晶铃）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/57 - Mines (A Flicker In The Deep).mp3', name: '矿洞（深处的闪烁）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/58 - Mines (Star Lumpy).mp3', name: '矿洞（星星之丘）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/59 - Mines (Icicles).mp3', name: '矿洞（冰柱）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/60 - Mines (Marimba Of Frozen Bone).mp3', name: '矿洞（冰冻骨的马林巴）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/61 - Mines (Cloth).mp3', name: '矿洞（布料）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/62 - Mines (Visitor To The Unknown).mp3', name: '矿洞（未知的访客）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/63 - Mines (The Lava Dwellers).mp3', name: '矿洞（熔岩居民）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/64 - Mines (Magical Shoes).mp3', name: '矿洞（魔法鞋）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/65 - Mines (Danger!).mp3', name: '矿洞（危险！）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/66 - In The Deep Woods.mp3', name: '深林之中', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/67 - Journey Of The Prairie King - Overworld.mp3', name: '草原王者之旅 - 外部世界', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/68 - Journey Of The Prairie King - The Outlaw.mp3', name: '草原王者之旅 - 流浪者', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/69 - Journey Of The Prairie King - Final Boss & Ending.mp3', name: '草原王者之旅 - 最终Boss与结局', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/70 - Load Game.mp3', name: '加载游戏', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/71 - Shane\'s Theme.mp3', name: '山恩的主题', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/72 - Dreamscape.mp3', name: '梦境', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/73 - Song Of Feathers (Emily\'s Theme).mp3', name: '羽毛之歌（艾米丽的主题）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/74 - Emily Dance.mp3', name: '艾米丽舞蹈', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/75 - Night Market.mp3', name: '夜市', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/76 - Submarine Theme.mp3', name: '潜水艇主题', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/77 - Mermaid Song.mp3', name: '美人鱼之歌', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/78 - Sun Room (Alone With Relaxing Tea).mp3', name: '阳光房（与茶的宁静时光）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/79 - Grapefruit Sky (Pasta Primavera Mix).mp3', name: '葡萄柚的天空（意大利面混音）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/80 - The Happy Junimo Show Theme.mp3', name: '快乐的祝尼魔秀主题', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/81 - Movie Theater.mp3', name: '电影院', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/82 - Crane Game.mp3', name: '起重机游戏', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/83 - Wumbus (Movie Theme).mp3', name: '温布斯（电影主题）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/84 - Exploring Our Vibrant World (Movie Theme).mp3', name: '探索我们多彩的世界（电影主题）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/85 - The Zuzu City Express (Movie Theme).mp3', name: '祖祖市快速列车（电影主题）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/86 - Movie Theater (Closing Time).mp3', name: '电影院（打烊时刻）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/87 - JunimoKart (Title Theme).mp3', name: '祝尼魔矿车（标题主题）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/88 - JunimoKart (The Gem Sea Giant).mp3', name: '祝尼魔矿车（宝石海洋巨人）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/89 - JunimoKart (Slomp\'s Stomp).mp3', name: '祝尼魔矿车（斯隆普的踩踏）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/90 - JunimoKart (Ghastly Galleon).mp3', name: '祝尼魔矿车（鬼魂船）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/91 - JunimoKart (Glowshroom Grotto).mp3', name: '祝尼魔矿车（萤光蘑菇洞）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/92 - Ginger Island.mp3', name: '姜岛', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/93 - Professor Snail\'s Radio.mp3', name: '蜗牛教授的广播', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/94 - Volcano Mines (Molten Jelly).mp3', name: '火山矿洞（熔岩果冻）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/95 - Volcano Mines (Forgotten World).mp3', name: '火山矿洞（遗忘的世界）', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/96 - Mystery Of The Caldera.mp3', name: '火山口的谜团', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/97 - The Gourmand\'s Cave.mp3', name: '美食家的洞窟', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/98 - Pirate Theme.mp3', name: '海盗主题', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/99 - Leo\'s Song.mp3', name: '利奥的歌', artist: 'ConcernedApe' },
+            { path: '/api/Stardew Valley Soundtrack/100 - Summit Celebration.mp3', name: '峰顶庆典', artist: 'ConcernedApe' }
+        ];
+        const COVER_IMAGE = "/images/星露谷物语.webp"; 
+    </script>
+    <script src="../play.js"></script>
+</body>
+</html>

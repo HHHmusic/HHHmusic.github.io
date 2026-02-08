@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://music.teahush.link/Stardew%20Valley%20Soundtrack</loc>
+    <loc>https://music.hcyhub.com/Stardew%20Valley</loc>
     
     <lastmod>2024-11-27</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
 
   <url>
-    <loc>https://music.teahush.link/Dyson%20Sphere%20Program</loc>
+    <loc>https://music.hcyhub.com/Dyson%20Sphere%20Program</loc>
     
     <lastmod>2024-11-28</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://music.teahush.link/Prescription%20for%20Sleep%20Stardew%20Valley</loc>
+    <loc>https://music.hcyhub.com/Prescription%20for%20Sleep%20Stardew%20Valley</loc>
     
     <lastmod>2024-11-28</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://music.teahush.link/SANFU%20Original%20Soundtrack</loc>
+    <loc>https://music.hcyhub.com/SANFU</loc>
     
     <lastmod>2024-11-28</lastmod>
     
@@ -38,7 +38,7 @@
   </url>
 
   <url>
-    <loc>https://music.teahush.link/Infinitode2</loc>
+    <loc>https://music.hcyhub.com/Infinitode2</loc>
     
     <lastmod>2024-12-03</lastmod>
     
@@ -47,16 +47,7 @@
   </url>
 
   <url>
-    <loc>https://music.teahush.link/SANFU%20Original%20Soundtrack</loc>
-    
-    <lastmod>2025-01-10</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://music.teahush.link/Dead%20Cells</loc>
+    <loc>https://music.hcyhub.com/Dead%20Cells</loc>
     
     <lastmod>2025-04-04</lastmod>
     
@@ -65,16 +56,7 @@
   </url>
 
   <url>
-    <loc>https://music.teahush.link/Dead%20Cells%20Chiptune</loc>
-    
-    <lastmod>2025-04-04</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://music.teahush.link/Starbound</loc>
+    <loc>https://music.hcyhub.com/Starbound</loc>
     
     <lastmod>2025-07-16</lastmod>
     
@@ -83,7 +65,7 @@
   </url>
 
   <url>
-    <loc>https://music.teahush.link/Terraria</loc>
+    <loc>https://music.hcyhub.com/Terraria</loc>
     
     <lastmod>2025-07-16</lastmod>
     
@@ -91,10 +73,46 @@
     <priority>0.6</priority>
   </url>
 
-    <url>
-    <loc>https://music.teahush.link/Terraria%20Otherworld</loc>
+  <url>
+    <loc>https://music.hcyhub.com/Frostpunk</loc>
     
-    <lastmod>2025-07-16</lastmod>
+    <lastmod>2025-11-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://music.hcyhub.com/Kingdom%20Two%20Crowns</loc>
+    
+    <lastmod>2025-11-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://music.hcyhub.com/Oxygen%20Not%20Included</loc>
+    
+    <lastmod>2025-11-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://music.hcyhub.com/Plants%20vs%20Zombies</loc>
+    
+    <lastmod>2025-11-08</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://music.hcyhub.com/Red%20Alert%202</loc>
+    
+    <lastmod>2025-11-08</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
