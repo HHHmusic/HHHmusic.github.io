@@ -1,0 +1,22 @@
+{
+    "HomeTitle": "铁锈战争",
+	"Title": "Rusted Warfare",
+    "Keywords": "静水深流, Rusted Warfare原声音轨, Rusted Warfare, 铁锈战争原声音轨, 铁锈战争, 在线播放, 音乐",
+    "Description": "Rusted Warfare原声音轨在线播放",
+    "Icon": "/images/Rusted Warfare/logo.jpg",
+    "BgImg": "/images/Rusted Warfare/bgImage.jpg",
+    "OgImg": "https://music.hcyhub.com/images/Rusted Warfare.jpg",
+    "CoverImg": "/images/Rusted Warfare/Rusted Warfare.jpg",
+	"Dir": "./Rusted Warfare",
+    "Files": [
+        {"path":"/api/Rusted Warfare/01. Battle tanks 1B.mp3","name":"Battle tanks 1B","artist":"Corroding Games"},
+        {"path":"/api/Rusted Warfare/02. Cont-Edgen.mp3","name":"Cont-Edgen","artist":"Corroding Games"},
+        {"path":"/api/Rusted Warfare/03. Sile-Justin.mp3","name":"Sile-Justin","artist":"Corroding Games"},
+        {"path":"/api/Rusted Warfare/04. Ove Melaa Theme Crystalized.mp3","name":"Ove Melaa Theme Crystalized","artist":"Corroding Games"},
+        {"path":"/api/Rusted Warfare/05. The Planets Mars (Part A).mp3","name":"The Planets Mars (Part A)","artist":"Corroding Games"},
+        {"path":"/api/Rusted Warfare/06. The Planets Mars (Part B).mp3","name":"The Planets Mars (Part B)","artist":"Corroding Games"},
+        {"path":"/api/Rusted Warfare/07. Acti Rudy Ves.mp3","name":"Acti Rudy Ves","artist":"Corroding Games"},
+        {"path":"/api/Rusted Warfare/08. Ove Earth Is All We Have.mp3","name":"Ove Earth Is All We Have","artist":"Corroding Games"},
+        {"path":"/api/Rusted Warfare/09. Adama-Bobthede.mp3","name":"Adama-Bobthede","artist":"Corroding Games"}
+    ]
+}
