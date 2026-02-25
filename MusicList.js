@@ -29,11 +29,7 @@ const audioExtensions = ['.mp3', '.wav', '.ogg', '.m4a', '.flac'];
 
 /** 清理曲目名 */
 function cleanTrackName(filename) {
-    let name = path.parse(filename).name;
-    name = name.replace(/^\d+-\d+\.\s*/, '');
-    name = name.replace(/^\d+\.\s*/, '');
-    name = name.replace(/^\d+\s*-\s*/, '');
-    return name.trim();
+    return path.parse(filename).name;
 }
 
 function formatPlaylistForJSON(playlist) {
