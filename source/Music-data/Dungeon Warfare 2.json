@@ -1,0 +1,24 @@
+{
+    "HomeTitle": "Dungeon Warfare 2",
+	"Title": "Dungeon Warfare 2",
+    "Keywords": "静水深流, Dungeon Warfare 2原声音轨, Dungeon Warfare 2, 在线播放, 音乐",
+    "Description": "Dungeon Warfare 2原声音轨在线播放",
+    "Icon": "/images/Dungeon Warfare 2/logo.jpg",
+    "BgImg": "/images/Dungeon Warfare 2/bgImage.jpg",
+    "OgImg": "https://music.hcyhub.com/images/Dungeon Warfare 2.png",
+    "CoverImg": "/images/Dungeon Warfare 2/Dungeon Warfare 2.png",
+	"Dir": "./Dungeon Warfare 2",
+    "Files": [
+        {"path":"/api/Dungeon Warfare 2/01. New Dawn.mp3","name":"New Dawn","artist":"Jinmann Kim"},
+        {"path":"/api/Dungeon Warfare 2/02. Mist.mp3","name":"Mist","artist":"Jinmann Kim"},
+        {"path":"/api/Dungeon Warfare 2/03. Jungle Frenzy.mp3","name":"Jungle Frenzy","artist":"Jinmann Kim"},
+        {"path":"/api/Dungeon Warfare 2/04. Chiseled Sandstones.mp3","name":"Chiseled Sandstones","artist":"Jinmann Kim"},
+        {"path":"/api/Dungeon Warfare 2/05. Heroes Must Die.mp3","name":"Heroes Must Die","artist":"Jinmann Kim"},
+        {"path":"/api/Dungeon Warfare 2/06. Unlocked.mp3","name":"Unlocked","artist":"Jinmann Kim"},
+        {"path":"/api/Dungeon Warfare 2/07. Trap Dungeon.mp3","name":"Trap Dungeon","artist":"Jinmann Kim"},
+        {"path":"/api/Dungeon Warfare 2/08. Dungeonist.mp3","name":"Dungeonist","artist":"Jinmann Kim"},
+        {"path":"/api/Dungeon Warfare 2/09. Last Chance.mp3","name":"Last Chance","artist":"Jinmann Kim"},
+        {"path":"/api/Dungeon Warfare 2/10. Desert Bazaar.mp3","name":"Desert Bazaar","artist":"Jinmann Kim"},
+        {"path":"/api/Dungeon Warfare 2/11. Vaxxal.mp3","name":"Vaxxal","artist":"Jinmann Kim"}
+    ]
+}
