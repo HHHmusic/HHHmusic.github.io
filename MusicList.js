@@ -15,15 +15,14 @@ const USE_METADATA_TITLE = false;
 // 只需要写需要生成列表的根目录名
 // 可选设置 overrideArtist / 子目录覆盖
 const config = {
-    'Monument Valley': {
+    '文件夹名': {
         // 整个目录强制作者（可选）
         overrideArtist: null,
-
         // 子目录作者覆盖（可选）
         folderArtistMap: {
             // 'OST1': 'Stafford Bawler'
         }
-    }
+    },
 };
 // 音频文件扩展
 const audioExtensions = ['.mp3', '.wav', '.ogg', '.m4a', '.flac'];

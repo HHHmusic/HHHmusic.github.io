@@ -1,0 +1,22 @@
+{
+    "HomeTitle": "Alto",
+	"Title": "Alto",
+    "Keywords": "静水深流, Alto原声音轨, Alto, 在线播放, 音乐",
+    "Description": "Alto原声音轨在线播放",
+    "Icon": "/images/Alto/favicon.ico",
+    "BgImg": "/images/Alto/bgImage.png",
+    "OgImg": "https://music.hcyhub.com/images/Alto.jpg",
+    "CoverImg": "/images/Alto/Alto.jpg",
+	"Dir": "./Alto",
+    "Files": [
+        {"type":"chapter","title":"Alto's Adventure"},
+        {"path":"/api/Alto/Alto's Adventure/01 Alto's Theme.mp3","name":"01 Alto's Theme","artist":"Brian Crawford"},
+        {"path":"/api/Alto/Alto's Adventure/02 Zen Mode.mp3","name":"02 Zen Mode","artist":"Torin Borrowdale"},
+        {"path":"/api/Alto/Alto's Adventure/03 The Spirit of the Mountain.mp3","name":"03 The Spirit of the Mountain","artist":"Todd Baker"},
+        {"type":"chapter","title":"Alto's Odyssey"},
+        {"path":"/api/Alto/Alto's Odyssey/01. The Lost City.mp3","name":"The Lost City","artist":"Todd Baker"},
+        {"path":"/api/Alto/Alto's Odyssey/02. A Moment of Tranquility.mp3","name":"A Moment of Tranquility","artist":"Torin Borrowdale"},
+        {"path":"/api/Alto/Alto's Odyssey/03. Window to a World.mp3","name":"Window to a World","artist":"Todd Baker"},
+        {"path":"/api/Alto/Alto's Odyssey/04. An Endless Desert.mp3","name":"An Endless Desert","artist":"Todd Baker"}
+    ]
+}
