@@ -4,6 +4,7 @@
     "ejs": "^4.0.1",
     "fs-extra": "^11.3.3",
     "js-yaml": "^4.1.1",
+    "music-metadata": "^11.12.1",
     "serve-handler": "^6.1.6"
   }
 }
