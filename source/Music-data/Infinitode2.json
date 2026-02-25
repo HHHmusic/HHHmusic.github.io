@@ -5,8 +5,8 @@
     "Description": "Infinitode2原声音轨在线播放",
     "Icon": "/images/Infinitode2/logo.png",
     "BgImg": "/images/Infinitode2/bgImage.jpg",
-    "OgImg": "https://music.hcyhub.com/images/Infinitode2.webp",
-    "CoverImg": "/images/Infinitode2/Infinitode2.webp",
+    "OgImg": "https://music.hcyhub.com/images/Infinitode2.jpg",
+    "CoverImg": "/images/Infinitode2/Infinitode2.jpg",
 	"Dir": "./Infinitode2",
     "Files": [
         {"path":"/api/Infinitode2/主界面前奏.mp3","name":"主界面前奏","artist":"Infinitode 2"},

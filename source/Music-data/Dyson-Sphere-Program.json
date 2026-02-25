@@ -5,8 +5,8 @@
     "Description": "Dyson Sphere Program原声音轨在线播放",
     "Icon": "/images/Dyson Sphere Program/logo.png",
     "BgImg": "/images/Dyson Sphere Program/bgImage.jpg",
-    "OgImg": "https://music.hcyhub.com/images/戴森球计划.webp",
-    "CoverImg": "/images/Dyson Sphere Program/戴森球计划.webp",
+    "OgImg": "https://music.hcyhub.com/images/戴森球计划.jpg",
+    "CoverImg": "/images/Dyson Sphere Program/戴森球计划.jpg",
 	"Dir": "./Dyson Sphere Program",
     "Files": [
         {"path":"/api/Dyson Sphere Program/01 Dyson Sphere Program Theme.mp3","name":"01 戴森球计划 Dyson Sphere Program Theme","artist":"Elecrystal"},
