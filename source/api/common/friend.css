@@ -1,0 +1,211 @@
+body {
+    background-color: #f4f4f4;
+}
+.content {
+    padding: 50px 20px 0 20px;
+}
+.friends-container .tag-title{
+    font-size: 1.75rem;
+    font-weight: 400;
+    padding: 50px 0 0 0;
+}
+.title {
+    margin-bottom: 0rem !important;
+}
+.links-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+.link-item {
+    display: flex;
+    height: auto;
+    background: #fff;
+    border-radius: 8px;
+    padding: 0;
+    box-shadow: 0 2px 8px rgba(10, 40, 120, .08);
+    transition: all 0.2s ease-in-out;
+    overflow: hidden;
+}
+.link-item a {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    padding: 17px 22px;
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+    box-sizing: border-box;
+}
+.link-item:hover {
+    box-shadow: 0 4px 22px rgba(10, 40, 120, .13);
+    transform: translateY(-2px) scale(1.02);
+}
+.link-item .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 18px;
+    border: 2px solid #fff;
+    background: #fff;
+    flex-shrink: 0;
+}
+.link-item .info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+}
+.link-item .name {
+    font-size: 1.11em;
+    font-weight: bold;
+    color: #2391EC;
+    margin-bottom: 3px;
+    word-break: break-all;
+}
+.link-item .description {
+    color: #5a5a5a;
+    font-size: 0.97em;
+    opacity: .87;
+    line-height: 1.48;
+    word-break: break-all;
+}
+@media (max-width: 700px) {
+    .links-content {
+        grid-template-columns: 1fr;
+    }
+}
+a {
+    text-decoration: none;
+}
+a {
+    color: rgb(3, 155, 229);
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+}
+#zan {
+    margin: 0 auto;
+    width: 80%;
+}
+.twikoo {
+    margin: auto;
+    width: 85%;
+}
+.iframe {
+    transition: .2s;
+    display: flex;
+    margin: 15px auto 0px;
+    color: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    background: #a4a61d;
+    align-items: center;
+}
+.iframe:hover {
+    background: #a4a61dd0;
+    color: #fff;
+}
+.iframe:focus{
+    background: #a4a61d;
+    color: #fff;
+}
+.card .card-content {
+    padding: 24px;
+    border-radius: 0px 0px 2px 2px;
+}
+.friends-divider {
+    border: none;
+    border-top: 1px dashed #ccc;
+    margin: 20px auto;
+    width: 100%;
+}
+.divider {
+    border: none;
+    border-top: 1px dashed #ccc;
+    margin: 20px auto;
+    width: 80%;
+}
+/* 点赞按钮 */
+#zan:after {
+    position: absolute;
+    top: .7rem;
+    right: .7rem;
+    width: .4rem;
+    height: .4rem;
+    border-radius: .4rem;
+    background: var(--card-bg);
+    content: '';
+}
+#zan:before {
+    position: absolute;
+    top: .5rem;
+    right: .5rem;
+    width: .8rem;
+    height: .8rem;
+    border-radius: .8rem;
+    background: #b30070;
+    content: '';
+}
+#zan:hover{
+    -webkit-box-shadow: 0 0 8px 0 rgba(232,237,250,.6), 0 2px 4px 0 rgba(232,237,250,.5);
+    box-shadow: 0 0 8px 0 rgba(232,237,250,.6), 0 2px 4px 0 rgba(232,237,250,.5);
+
+}
+#zan {
+	margin-top:40px;
+	position:relative;
+	    -webkit-transition: box-shadow .3s ease-in-out;
+    -moz-transition: box-shadow .3s ease-in-out;
+    -o-transition: box-shadow .3s ease-in-out;
+    -ms-transition: box-shadow .3s ease-in-out;
+    transition: box-shadow .3s ease-in-out;
+	border: 1px solid var(--light-grey);
+   display: flex;    
+   justify-content: center; 
+  width:100%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+#zan .heart {
+  background: url(/api/icon/zan.png);
+  background-position: left;
+  background-repeat: no-repeat;
+  height: 100px;
+  width: 100px;
+  background-size: 2900%;
+  float: left;
+  display: inline-block;
+  position: relative;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+#zan #zan_text {
+  display: inline-block;
+  font-family: "Georgia", Times, serif;
+  font-size: 25px;
+  color: #999;
+  position: relative;
+  left: -15px;
+  line-height: 100px;
+}
+@keyframes heartBlast {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+.heartAnimation {
+  display: inline-block;
+  animation-name: heartBlast;
+  animation-duration: 0.8s;
+  animation-iteration-count: 1;
+  animation-timing-function: steps(28);
+  background-position: right;
+}

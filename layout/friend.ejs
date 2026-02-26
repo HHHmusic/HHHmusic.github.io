@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh">
+<%- include('head', { pageType: 'friend' }) %>
+<body>
+    <%- include('header', { pageType: 'friend' }) %>
+
+    <style>
+
+    </style>
+
+    <main class="content">
+        <div class="container friends-container">
+            <div class="card">
+                <div class="card-content">
+                    <div class="tag-title center-align">
+                        <i class="fas fa-address-book"></i>&nbsp;&nbsp;<%= __('friends') %>
+                    </div>
+                    
+                    <div class="links-content">
+                        <% (site.data.friends.MySite || []).forEach(function(friend){ %>
+                        <div class="link-item">
+                            <a href="<%= friend.url %>" target="_blank" rel="noopener">
+                            <img class="avatar" src="<%= friend.avatar %>" alt="<%= friend.name %>">
+                            <div class="info">
+                                <div class="name"><%= friend.name %></div>
+                                <div class="description"><%= friend.introduction %></div>
+                            </div>
+                            </a>
+                        </div>
+                        <% }) %>
+                    </div>
+
+                    <hr class="friends-divider"> 
+
+                    <div class="links-content">
+                        <% (site.data.friends.others || []).forEach(function(friend){ %>
+                        <div class="link-item">
+                            <a href="<%= friend.url %>" target="_blank" rel="noopener">
+                            <img class="avatar" src="<%= friend.avatar %>" alt="<%= friend.name %>">
+                            <div class="info">
+                                <div class="name"><%= friend.name %></div>
+                                <div class="description"><%= friend.introduction %></div>
+                            </div>
+                            </a>
+                        </div>
+                        <% }) %>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <iframe id="iframe" src="/friend/互动友链/link-canvas.html" style="border-radius: 12px;" width="100%" height="450px" frameborder="0"></iframe>
+                    <button class="iframe" onclick="javascript:refreshFrame();">
+                        刷新
+                    </button>
+                </div>
+            </div>
+
+            <script>
+                function refreshFrame() {
+                    document.getElementById('iframe').contentWindow.location.reload(true);
+                }
+            </script>
+
+            <% if (page.content && page.content.replace(/<[^>]*>/g, '').trim().length > 0) { %>
+                <div class="card">
+                <div class="card-content">
+                    <%- page.content %>
+                </div>
+                </div>
+            <% } %>
+
+            <div class="card">
+
+                <div style="padding-top: 20px;"> 
+                <div id="zan" class="clearfix">
+                    <div class="heart" onclick="goodplus(url, flag)"></div>
+                    <br>
+                    <div id="zan_text"></div>
+                </div>
+                <div style="padding-top: 10px;"> 
+                <%- include('twikoo') %>
+
+            </div>
+
+        </div>
+    </main>
+
+    <%- include('footer') %>
+    <%- include('search') %>
+</body>
+</html>

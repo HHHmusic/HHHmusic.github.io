@@ -8,7 +8,12 @@
     gtag('js', new Date());
     gtag('config', 'G-M7CTLKY38C');
 </script>
-
+<link rel="stylesheet" href="/api/common/header.css">
+<link rel="stylesheet" href="/api/icon/css/all.min.css">
+<link rel="stylesheet" href="/api/common/footer.css">
+<script src="/api/common/toggle.js"></script>
+<script src="/api/common/count.js" defer></script>
+<script src="/api/common/sitetime.js" defer></script>
 
 <% if (pageType === 'Home') { %>
     <link rel="icon" href="https://hcyhub.com/H.svg">
@@ -17,19 +22,30 @@
     <meta name="google-site-verification" content="mD2l3_aOmwjXLEvIAyB7bLGNGBnq7u88vPoK2oNuy3c" />
     <meta name="description" content="静水深流博客音乐播放导航页，游戏原声音轨在线播放">
     <title>静水深流 | 音乐空间</title>
-    <link rel="stylesheet" href="/api/index.css">
+    <link rel="stylesheet" href="/api/index/index.css">
     <meta property="og:type" content="website">
     <meta property="og:title" content="静水深流 | 音乐空间">
     <meta property="og:description" content="静水深流博客音乐播放导航页，游戏原声音轨在线播放">
     <meta property="og:image" content="https://hcyhub.com/H.svg">
+    <script src="/api/common/search.js" defer></script>
 <% } else if (pageType==='MusicPlay' ) { %>
-    <link rel="stylesheet" href="/api/play.css">
+    <link rel="stylesheet" href="/api/play/play.css">
     <link rel="icon" href="<%= music.icon %>">
     <title><%= music.title %></title>
-    <meta name="keywords" content="静水深流, Frostpunk原声音轨, Frostpunk, 冰汽时代原声音轨, 冰汽时代, 在线播放, 音乐">
+    <meta name="keywords" content="<%= music.keywords %>">
     <meta property="og:type" content="website">
     <meta property="og:title" content="<%= music.title %>">
     <meta property="og:description" content="<%= music.desc %>">
     <meta property="og:image" content="<%= music.image %>">
+<% } else if (pageType==='friend' ) { %>
+    <title>友链</title>
+    <meta name="description" content="友情链接，欢迎交换友链！">
+    <link rel="stylesheet" href="/api/common/friend.css"> 
+    <script src="/api/play/zan.js" defer></script>
+    <link rel="icon" href="https://hcyhub.com/H.svg">
+    <script src="/api/common/search.js" defer></script>
+<% } else if (pageType==='about' ) { %>  
+    <link rel="stylesheet" href="/api/common/about.css">
+    <script src="/api/common/search.js" defer></script>
 <% } %>
 

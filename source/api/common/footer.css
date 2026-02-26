@@ -1,0 +1,29 @@
+/* 页脚 */
+/**
+ * 全站FooterCSS样式
+*/
+.footer {
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    width: 100%;
+}
+.footer a {
+    color: #a3a300;
+    text-decoration: none;
+    font-weight: bold;
+}
+.footer a:hover {
+    text-decoration: underline;
+}
+.footer p {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+/* 卡片页脚分割线 */
+.divider {
+    border: none;
+    border-top: 1px dashed #ccc;
+    margin: 20px auto;
+    width: 80%;
+}

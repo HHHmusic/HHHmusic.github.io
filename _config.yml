@@ -7,7 +7,12 @@ port: 8081
 templateAffect:
   Home.ejs: Home
   MusicPlay.ejs: MusicPlay
-  head.ejs: All
+  Head.ejs: All
+  Header.ejs: All
+  friend.ejs: Friend
+  footer.ejs: All
+  search.ejs: All
+  about.ejs: About
 
 clean:
   keep:

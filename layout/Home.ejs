@@ -4,8 +4,7 @@
     <%- include('Head', { pageType: 'Home' }) %>
 </head>
 <body>
-
-    <h1>静水深流 | 音乐空间</h1>
+    <%- include('header') %>
     <div class="container">
         <% home.forEach(item => { %>
             <div class="card-wrapper">
@@ -19,6 +18,7 @@
             </div>
         <% }); %>
     </div>
-
+    <%- include('footer') %>
+    <%- include('search') %>
 </body>
 </html>

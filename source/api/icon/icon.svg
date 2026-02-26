@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;" width="20px" height="20px" viewBox="0 0 24 24">
+    <symbol id="HomeSVG" viewBox="2 2 24 24">
+        <path d="M6 19h3v-5q0-.425.288-.712T10 13h4q.425 0 .713.288T15 14v5h3v-9l-6-4.5L6 10zm-2 0v-9q0-.475.213-.9t.587-.7l6-4.5q.525-.4 1.2-.4t1.2.4l6 4.5q.375.275.588.7T20 10v9q0 .825-.588 1.413T18 21h-4q-.425 0-.712-.288T13 20v-5h-2v5q0 .425-.288.713T10 21H6q-.825 0-1.412-.587T4 19m8-6.75" fill="currentColor" />
+    </symbol>
+    <symbol id="DownloadSVG" viewBox="0 0 24 24">
+        <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 18h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="CopySVG" viewBox="0 0 1024 1024">
+        <path d="M768 832a128 128 0 0 1-128 128H192A128 128 0 0 1 64 832V384a128 128 0 0 1 128-128v64a64 64 0 0 0-64 64v448a64 64 0 0 0 64 64h448a64 64 0 0 0 64-64h64z"  fill="currentColor"/>
+        <path d="M384 128a64 64 0 0 0-64 64v448a64 64 0 0 0 64 64h448a64 64 0 0 0 64-64V192a64 64 0 0 0-64-64H384zm0-64h448a128 128 0 0 1 128 128v448a128 128 0 0 1-128 128H384a128 128 0 0 1-128-128V192A128 128 0 0 1 384 64z"  fill="currentColor"/>
+    </symbol>
+</svg>

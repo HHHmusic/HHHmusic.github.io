@@ -1,0 +1,23 @@
+MySite:
+  - name: "静水深流"
+    url: "https://hcyhub.com"
+    avatar: "https://hcyhub.com/medias/avatar.webp"
+    introduction: "博客主站"
+  - name: "Flash收藏站"
+    url: "https://flash.hcyhub.com"
+    avatar: "/api/icon/H.svg"
+    introduction: "Flash收藏站"
+  - name: "音乐空间"
+    url: "/"
+    avatar: "/api/icon/H.svg"
+    introduction: "音乐空间"
+  - name: "Page静态页面"
+    url: "https://page.hcyhub.com"
+    avatar: "/api/icon/H.svg"
+    introduction: "Page静态页面"
+
+# others:
+#   - name: "老豆荚Oldpods"
+#     url: "https://oldpods.cn"
+#     avatar: "/friend/images/oldpods.cn.png"
+#     introduction: "一个精品资源分享网站"

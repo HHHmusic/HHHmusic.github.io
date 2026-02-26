@@ -8,15 +8,16 @@
     "OgImg": "https://music.hcyhub.com/images/Rusted Warfare.jpg",
     "CoverImg": "/images/Rusted Warfare/Rusted Warfare.jpg",
 	"Dir": "./Rusted Warfare",
+    "pubDate": "2026-02-25 16:32:02",
     "Files": [
-        {"path":"/api/Rusted Warfare/01. Battle tanks 1B.mp3","name":"01. Battle tanks 1B","artist":"-"},
-        {"path":"/api/Rusted Warfare/02. Cont-Edgen.mp3","name":"02. Cont-Edgen","artist":"-"},
-        {"path":"/api/Rusted Warfare/03. Sile-Justin.mp3","name":"03. Sile-Justin","artist":"-"},
-        {"path":"/api/Rusted Warfare/04. Ove Melaa Theme Crystalized.mp3","name":"04. Ove Melaa Theme Crystalized","artist":"-"},
-        {"path":"/api/Rusted Warfare/05. The Planets Mars (Part A).mp3","name":"05. The Planets Mars (Part A)","artist":"-"},
-        {"path":"/api/Rusted Warfare/06. The Planets Mars (Part B).mp3","name":"06. The Planets Mars (Part B)","artist":"-"},
-        {"path":"/api/Rusted Warfare/07. Acti Rudy Ves.mp3","name":"07. Acti Rudy Ves","artist":"-"},
-        {"path":"/api/Rusted Warfare/08. Ove Earth Is All We Have.mp3","name":"08. Ove Earth Is All We Have","artist":"-"},
-        {"path":"/api/Rusted Warfare/09. Adama-Bobthede.mp3","name":"09. Adama-Bobthede","artist":"-"}
+        {"path":"/api/music/Rusted Warfare/01. Battle tanks 1B.mp3","name":"01. Battle tanks 1B","artist":"-"},
+        {"path":"/api/music/Rusted Warfare/02. Cont-Edgen.mp3","name":"02. Cont-Edgen","artist":"-"},
+        {"path":"/api/music/Rusted Warfare/03. Sile-Justin.mp3","name":"03. Sile-Justin","artist":"-"},
+        {"path":"/api/music/Rusted Warfare/04. Ove Melaa Theme Crystalized.mp3","name":"04. Ove Melaa Theme Crystalized","artist":"-"},
+        {"path":"/api/music/Rusted Warfare/05. The Planets Mars (Part A).mp3","name":"05. The Planets Mars (Part A)","artist":"-"},
+        {"path":"/api/music/Rusted Warfare/06. The Planets Mars (Part B).mp3","name":"06. The Planets Mars (Part B)","artist":"-"},
+        {"path":"/api/music/Rusted Warfare/07. Acti Rudy Ves.mp3","name":"07. Acti Rudy Ves","artist":"-"},
+        {"path":"/api/music/Rusted Warfare/08. Ove Earth Is All We Have.mp3","name":"08. Ove Earth Is All We Have","artist":"-"},
+        {"path":"/api/music/Rusted Warfare/09. Adama-Bobthede.mp3","name":"09. Adama-Bobthede","artist":"-"}
     ]
 }

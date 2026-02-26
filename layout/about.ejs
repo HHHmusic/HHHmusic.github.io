@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh">
+<%- include('head', { pageType: 'about' }) %>
+<body>
+    <%- include('header', { pageType: 'about' }) %>
+
+    <main class="main-content about-container">
+        <section class="about-section bio-card">
+            <h2 class="section-title"><i class="fas fa-info-circle"></i> 关于本站</h2>
+            <div class="bio-content">
+                <p>欢迎来到我的音乐空间！</p>
+            </div>
+        </section>
+
+    <section class="about-section stats-grid">
+        <div class="stat-item">
+            <div class="stat-icon"><i class="fas fa-music"></i></div>
+            <div class="stat-info">
+                <span class="stat-label">总曲目数</span>
+                <span class="stat-value"><%= stats.totalCount %><small>首</small></span>
+            </div>
+        </div>
+
+        <div class="stat-item">
+            <div class="stat-icon"><i class="fas fa-database"></i></div>
+            <div class="stat-info">
+                <span class="stat-label">存储占用</span>
+                <span class="stat-value"><%= stats.totalSizeText.value %><small><%= stats.totalSizeText.unit %></small></span>
+            </div>
+        </div>
+
+        <div class="stat-item">
+            <div class="stat-icon"><i class="fas fa-clock"></i></div>
+            <div class="stat-info">
+                <span class="stat-label">音乐总时长</span>
+                <span class="stat-value"><%= stats.totalDurationHr %><small>小时</small></span>
+            </div>
+        </div>
+
+        <div class="stat-item">
+            <div class="stat-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="stat-info">
+                <span class="stat-label">平均单曲时长</span>
+                <span class="stat-value"><%= stats.avgDuration %><small>秒</small></span>
+            </div>
+        </div>
+
+        <div class="stat-item">
+            <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+            <div class="stat-info">
+                <span class="stat-label">最长的单曲</span>
+                <span class="stat-value" style="font-size: 1rem;"><%= stats.longestTrackName %></span>
+            </div>
+        </div>
+
+        <div class="stat-item">
+            <div class="stat-icon"><i class="fas fa-user-edit"></i></div>
+            <div class="stat-info">
+                <span class="stat-label">音乐作者</span>
+                <span class="stat-value"><%= stats.authorCount %><small>位</small></span>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <%- include('footer') %>
+    <%- include('search') %>
+</body>
+</html>

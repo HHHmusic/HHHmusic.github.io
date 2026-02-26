@@ -1,0 +1,48 @@
+<header class="header">
+  <div class="header-content">
+    <button class="nav-burger" id="NavBurgerBtn" aria-label="菜单" type="button">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="brand-logo">
+      <a href="/">
+        <img src="/api/icon/H.svg" alt="音乐空间Logo" class="logo-img">
+        <span class="logo-span">音乐空间</span>
+      </a>
+    </div>
+    <nav class="nav-menu" id="NavMenu">
+      <li class="nav-item">
+        <a href="/">
+          <i class="fas fa-home"></i>
+          <span>首页</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/about">
+          <i class="fas fa-info-circle"></i>
+          <span>关于</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="/friend">
+          <i class="fas fa-address-book"></i>
+          <span>友链</span>
+        </a>
+      </li>
+    </nav>
+    <button class="nav-search" id="NavSearchBtn" aria-label="搜索" type="button">
+      <i class="fas fa-search"></i>
+    </button>
+  </div>
+</header>
+<!-- 侧边栏菜单弹窗 -->
+<div id="mobileNavDrawer" class="nav-drawer">
+  <div class="nav-drawer-mask" id="navDrawerMask"></div>
+  <nav class="nav-drawer-panel">
+    <button class="nav-drawer-close" id="navDrawerCloseBtn" aria-label="关闭菜单">
+      <i class="fas fa-times"></i>
+    </button>
+    <a href="/"><i class="fas fa-home"></i> 首页</a>
+    <a href="/about"><i class="fas fa-info-circle"></i> 关于</a>
+    <a href="/friend"><i class="fas fa-address-book"></i> 友链</a>
+  </nav>
+</div>

@@ -1,0 +1,16 @@
+<div id="tcomment"></div>
+<script src="/api/play/twikoo.min.js"></script>
+<script>
+    twikoo.init({
+        envId: 'https://twikoo.hcyhub.com/.netlify/functions/twikoo',
+        el: '#tcomment',
+        lang: 'zh-CN',
+    }).then(function () {
+    var tkInputs = document.querySelector('#twikoo').getElementsByTagName('input');
+    for (var tkInputsIndex = 0; tkInputsIndex < tkInputs.length; tkInputsIndex++) {
+        if (tkInputs[tkInputsIndex]) {
+            tkInputs[tkInputsIndex].classList.add('browser-default');
+        }
+    }
+});
+</script>

@@ -8,17 +8,18 @@
     "OgImg": "https://music.hcyhub.com/images/Dungeon Warfare 2.png",
     "CoverImg": "/images/Dungeon Warfare 2/Dungeon Warfare 2.png",
 	"Dir": "./Dungeon Warfare 2",
+    "pubDate": "2026-02-25 16:59:00",
     "Files": [
-        {"path":"/api/Dungeon Warfare 2/01. New Dawn.mp3","name":"01. New Dawn","artist":"Jinmann Kim"},
-        {"path":"/api/Dungeon Warfare 2/02. Mist.mp3","name":"02. Mist","artist":"Jinmann Kim"},
-        {"path":"/api/Dungeon Warfare 2/03. Jungle Frenzy.mp3","name":"03. Jungle Frenzy","artist":"Jinmann Kim"},
-        {"path":"/api/Dungeon Warfare 2/04. Chiseled Sandstones.mp3","name":"04. Chiseled Sandstones","artist":"Jinmann Kim"},
-        {"path":"/api/Dungeon Warfare 2/05. Heroes Must Die.mp3","name":"05. Heroes Must Die","artist":"Jinmann Kim"},
-        {"path":"/api/Dungeon Warfare 2/06. Unlocked.mp3","name":"06. Unlocked","artist":"Jinmann Kim"},
-        {"path":"/api/Dungeon Warfare 2/07. Trap Dungeon.mp3","name":"07. Trap Dungeon","artist":"Jinmann Kim"},
-        {"path":"/api/Dungeon Warfare 2/08. Dungeonist.mp3","name":"08. Dungeonist","artist":"Jinmann Kim"},
-        {"path":"/api/Dungeon Warfare 2/09. Last Chance.mp3","name":"09. Last Chance","artist":"Jinmann Kim"},
-        {"path":"/api/Dungeon Warfare 2/10. Desert Bazaar.mp3","name":"10. Desert Bazaar","artist":"Jinmann Kim"},
-        {"path":"/api/Dungeon Warfare 2/11. Vaxxal.mp3","name":"11. Vaxxal","artist":"Jinmann Kim"}
+        {"path":"/api/music/Dungeon Warfare 2/01. New Dawn.mp3","name":"01. New Dawn","artist":"Jinmann Kim"},
+        {"path":"/api/music/Dungeon Warfare 2/02. Mist.mp3","name":"02. Mist","artist":"Jinmann Kim"},
+        {"path":"/api/music/Dungeon Warfare 2/03. Jungle Frenzy.mp3","name":"03. Jungle Frenzy","artist":"Jinmann Kim"},
+        {"path":"/api/music/Dungeon Warfare 2/04. Chiseled Sandstones.mp3","name":"04. Chiseled Sandstones","artist":"Jinmann Kim"},
+        {"path":"/api/music/Dungeon Warfare 2/05. Heroes Must Die.mp3","name":"05. Heroes Must Die","artist":"Jinmann Kim"},
+        {"path":"/api/music/Dungeon Warfare 2/06. Unlocked.mp3","name":"06. Unlocked","artist":"Jinmann Kim"},
+        {"path":"/api/music/Dungeon Warfare 2/07. Trap Dungeon.mp3","name":"07. Trap Dungeon","artist":"Jinmann Kim"},
+        {"path":"/api/music/Dungeon Warfare 2/08. Dungeonist.mp3","name":"08. Dungeonist","artist":"Jinmann Kim"},
+        {"path":"/api/music/Dungeon Warfare 2/09. Last Chance.mp3","name":"09. Last Chance","artist":"Jinmann Kim"},
+        {"path":"/api/music/Dungeon Warfare 2/10. Desert Bazaar.mp3","name":"10. Desert Bazaar","artist":"Jinmann Kim"},
+        {"path":"/api/music/Dungeon Warfare 2/11. Vaxxal.mp3","name":"11. Vaxxal","artist":"Jinmann Kim"}
     ]
 }
