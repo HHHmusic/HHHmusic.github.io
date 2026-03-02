@@ -15,8 +15,13 @@
 <script src="/api/common/count.js" defer></script>
 <script src="/api/common/sitetime.js" defer></script>
 
-<% if (pageType === 'Home') { %>
+<% if (pageType === 'MusicPlay' && music.icon) { %>
+    <link rel="icon" href="<%= music.icon %>">
+<% } else { %>
     <link rel="icon" href="https://hcyhub.com/H.svg">
+<% } %>
+
+<% if (pageType === 'Home') { %>
     <meta name="yandex-verification" content="a7df0a1903eaf996" />
     <meta name="360-site-verification" content="8436c264b3932cd2b6b1f8d454b313bc" />
     <meta name="google-site-verification" content="mD2l3_aOmwjXLEvIAyB7bLGNGBnq7u88vPoK2oNuy3c" />
@@ -30,7 +35,6 @@
     <script src="/api/common/search.js" defer></script>
 <% } else if (pageType==='MusicPlay' ) { %>
     <link rel="stylesheet" href="/api/play/play.css">
-    <link rel="icon" href="<%= music.icon %>">
     <title><%= music.title %></title>
     <meta name="keywords" content="<%= music.keywords %>">
     <meta property="og:type" content="website">
@@ -42,7 +46,6 @@
     <meta name="description" content="友情链接，欢迎交换友链！">
     <link rel="stylesheet" href="/api/common/friend.css"> 
     <script src="/api/play/zan.js" defer></script>
-    <link rel="icon" href="https://hcyhub.com/H.svg">
     <script src="/api/common/search.js" defer></script>
 <% } else if (pageType==='about' ) { %>  
     <link rel="stylesheet" href="/api/common/about.css">

@@ -39,10 +39,14 @@
             const div = document.createElement('div');
             div.style.padding = "15px 0";
             div.style.borderBottom = "1px solid #eee";
-            
-            div.innerHTML = `
+            let finalUrl = item.play;
+            if (!finalUrl.includes('?') && !finalUrl.includes('#') && !finalUrl.endsWith('/')) {
+                finalUrl += '/';
+            }
+
+        div.innerHTML = `
                 <div style="margin-bottom: 5px;">
-                    <a href="${item.play}/" style="color:#42b983; text-decoration:none; font-size:18px; font-weight:600;">
+                    <a href="${finalUrl}" style="color:#42b983; text-decoration:none; font-size:18px; font-weight:600;">
                         ${highlight(item.title || '', query)}
                     </a>
                 </div>

@@ -2,7 +2,7 @@
  * 点赞JS
 */
 (function(){
-  const ApiUrl = 'https://hcyhub.com/like';
+  const ApiUrl = '/api/like';
   const UrlKey = window.location.host + window.location.pathname;
   const MaxLike = 5;
   window.url = window.location.host + window.location.pathname;

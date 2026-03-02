@@ -4,7 +4,7 @@
 */
 .header {
   width: 100%;
-  background: oklch(0.95 0.025 112);
+  background: #f4f4f4;
   color: oklch(0.55 0.12 112);
   position: fixed;
   top: 0;

@@ -272,32 +272,38 @@ function genAboutPage(TPL, PUB, stats) {
     writeFile(path.join(aboutDir, 'index.html'), html);
 }
 
-// 搜索索引 JSON
 function genSearchJson(PUB, musics) {
     const searchIndex = [];
 
     musics.forEach(m => {
+        const baseDir = m.dir.replace(/\/$/, '');
+
         searchIndex.push({
             title: m.title || m.homeTitle,
             brief: m.desc || '',
-            play: `/${m.dir}`,
+            play: `/${baseDir}`,
             pubDate: m.pubDate
         });
 
         if (Array.isArray(m.files)) {
             m.files.forEach(f => {
+                let targetUrl = `/${baseDir}`;
                 if (f.type === 'chapter') {
+                    targetUrl += `?chapter=${encodeURIComponent(f.title)}`;
                     searchIndex.push({
                         title: `${m.title} - ${f.title}`,
                         brief: `章节内容`,
-                        play: `/${m.dir}`,
+                        play: targetUrl,
                         pubDate: m.pubDate
                     });
                 } else {
+                    const cleanPath = f.path.replace(/[^a-zA-Z0-9]/g, '');
+                    targetUrl += `?track=${cleanPath}`;
+
                     searchIndex.push({
                         title: f.name || '',
                         brief: `来自专辑: ${m.title} | 艺术家: ${f.artist || '未知'}`,
-                        play: `/${m.dir}`,
+                        play: targetUrl,
                         pubDate: m.pubDate
                     });
                 }
@@ -306,12 +312,8 @@ function genSearchJson(PUB, musics) {
     });
 
     const apiDir = path.join(PUB, 'api');
-    if (!fs.existsSync(apiDir)) {
-        fs.mkdirSync(apiDir, { recursive: true });
-    }
-
-    const dest = path.join(apiDir, 'search.json');
-    fs.writeFileSync(dest, JSON.stringify(searchIndex, null, 2));
+    if (!fs.existsSync(apiDir)) fs.mkdirSync(apiDir, { recursive: true });
+    fs.writeFileSync(path.join(apiDir, 'search.json'), JSON.stringify(searchIndex, null, 2));
 }
 
 /* ------------------ 主流程 ------------------ */

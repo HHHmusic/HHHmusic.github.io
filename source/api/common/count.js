@@ -2,7 +2,7 @@
  * 访问数统计JS
 */
 (function () {
-  const ApiUrl = 'https://hcyhub.com/visitor-count';
+  const ApiUrl = '/api/visitor-count';
   const SiteKey = 'SiteUV';
   const Target = window.location.hostname + window.location.pathname;
   const PageKey = 'PageUV_' + Target;

@@ -117,6 +117,7 @@ function loadPlaylist() {
         if (item.type === 'chapter') {
             const chapterDiv = document.createElement('div');
             chapterDiv.className = 'playlist-chapter';
+            chapterDiv.id = item.title; 
             chapterDiv.innerHTML = `<span>${item.title}</span><span class="chapter-sep"></span>`;
             playlistContainer.appendChild(chapterDiv);
         } else {
@@ -128,6 +129,61 @@ function loadPlaylist() {
             playlistContainer.appendChild(musicDiv);
         }
     });
+}
+function handleUrlNavigation() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const trackParam = urlParams.get('track') || urlParams.get('t');
+    const chapterParam = urlParams.get('chapter');
+
+    let targetIndex = -1;
+
+    // 1. 处理单曲跳转
+    if (trackParam) {
+        targetIndex = playlist.findIndex(item => {
+            if (item.path) {
+                const cleanPath = item.path.replace(/[^a-zA-Z0-9]/g, '');
+                return cleanPath === trackParam;
+            }
+            return false;
+        });
+    } 
+    // 2. 处理章节跳转
+    else if (chapterParam) {
+        const chapterTitle = decodeURIComponent(chapterParam);
+        // 找到章节在 playlist 中的索引
+        const chapterIdx = playlist.findIndex(item => item.type === 'chapter' && item.title === chapterTitle);
+        
+        if (chapterIdx !== -1) {
+            // 滚动到章节位置
+            const targetChapter = document.getElementById(chapterTitle);
+            if (targetChapter) {
+                targetChapter.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+            // 找到章节后的第一首可播放曲目
+            for (let i = chapterIdx + 1; i < playlist.length; i++) {
+                if (playlist[i].path) {
+                    targetIndex = i;
+                    break;
+                }
+            }
+        }
+    }
+
+    // 执行播放逻辑
+    if (targetIndex !== -1) {
+        playTrack(targetIndex, false);
+        // 如果是单曲，滚动到具体曲目
+        if (trackParam) {
+            const targetEl = document.querySelector(`.playlist-item[data-index='${targetIndex}']`);
+            if (targetEl) targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }
+
+    // 清理 URL 参数，保留 hash (如果有的话)
+    if (trackParam || chapterParam) {
+        const newUrl = window.location.pathname + window.location.hash;
+        window.history.replaceState({}, document.title, newUrl);
+    }
 }
 function updateSongInfo() {
     const track = playlist[currentTrack];
@@ -170,11 +226,19 @@ function listenVisibilityForAutoplay() {
     });
 }
 
+
 loadOrFetchCover(function() {
     loadPlaylist();
     updateActiveTrack();
-    const firstTrack = getFirstPlayableTrack();
-    if(firstTrack !== null) playTrack(firstTrack, false);
+    const urlParams = new URLSearchParams(window.location.search);
+    const hasParam = urlParams.has('track') || urlParams.has('t') || urlParams.has('chapter');
+
+    if (hasParam) {
+        handleUrlNavigation();
+    } else {
+        const firstTrack = getFirstPlayableTrack();
+        if(firstTrack !== null) playTrack(firstTrack, false);
+    }
     listenVisibilityForAutoplay();
 });
 // === 全局按键控制 ===
